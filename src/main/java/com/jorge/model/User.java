@@ -9,6 +9,14 @@ public class User {
 		private Integer age;
 		private LinkedList<Post> posts = new LinkedList<Post>(); // Retrieving a list of objects with their dependencies
 		
+		public User(){
+		}
+		
+		public User(String firstName, Integer age){
+			this.firstName = firstName;
+			this.age = age;
+		}
+		
 		public Long getId() {
 			return id;
 		}

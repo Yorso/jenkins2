@@ -75,7 +75,23 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
- 
+		
+		<!-- spring-test Maven dependency for testing a method using the Spring's application context with JUnit 4 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.1.1.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- Necessary for unit testing controller methods -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.3</version>
+			<scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
