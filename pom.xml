@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.jorge</groupId>
-	<artifactId>jenkins2</artifactId>
-	<version>1.10.0-SNAPSHOT</version>
+	<groupId>opt.tomcat8</groupId>
+	<artifactId>.jenkins</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<!-- packaging>war</packaging -->
-	<name>jenkins2</name>
+	<name>jenkins-example</name>
     <description>Jenkins testing</description>
     
 	<properties>
@@ -79,7 +79,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>jenkins2</finalName>
+		<finalName>jenkins-example</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
