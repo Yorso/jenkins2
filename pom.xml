@@ -148,7 +148,25 @@
 							<cargo.servlet.port>8181</cargo.servlet.port>
 							<cargo.logging>medium</cargo.logging>
 						</properties>
-						<!--  Deployables -->
+						
+						
+						
+						
+						<deployables>
+
+                            <deployable>
+                                <groupId>com.jorge</groupId>
+                                <artifactId>jenkins2</artifactId>
+                                <type>war</type>
+                                <properties>
+                                    <context>/jenkins2</context>
+                                </properties>
+                            </deployable>
+
+                        </deployables>
+                        
+                        
+                        
 					</configuration>
 
 					<container>
