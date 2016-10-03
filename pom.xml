@@ -4,7 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
     <description>Jenkins testing</description>
@@ -22,7 +21,6 @@
 		<dependency>
             <groupId>opt.tomcat8..jenkins.workspace.jenkins2.target</groupId>
             <artifactId>jenkins2</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
             <type>war</type>
             <scope>provided</scope>
         </dependency>
