@@ -119,7 +119,7 @@
 				</dependencies>
 			</plugin>
 
-			<!-- plugin>
+			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
 				<version>1.4.2</version>
@@ -147,9 +147,9 @@
 						<properties>
 							<cargo.servlet.port>8181</cargo.servlet.port>
 							<cargo.logging>medium</cargo.logging>
-						</properties-->
+						</properties>
 						<!--  Deployables -->
-					<!-- /configuration>
+					</configuration>
 
 					<container>
 						<timeout>2980000</timeout>
@@ -162,9 +162,9 @@
 						</dependencies>
 					</container>
 				</configuration>
-			</plugin-->
+			</plugin>
 			
-			<plugin>
+			<!-- plugin>
 			    <groupId>org.mortbay.jetty</groupId>
 			    <artifactId>jetty-maven-plugin</artifactId>
 			    <version>8.1.9.v20130131</version>
@@ -203,7 +203,7 @@
 					      	</goals>
 					     </execution>
 				</executions>
-		    </plugin>
+		    </plugin-->
 
 		</plugins>
 	</build>
