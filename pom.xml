@@ -101,11 +101,6 @@
 			<version>1.4.3</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.codehaus.cargo</groupId>
-			<artifactId>cargo-maven2-plugin</artifactId>
-			<version>1.4.2</version>
-		</dependency>
 		
 	</dependencies>
 
@@ -137,6 +132,7 @@
 			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.4.2</version>
 				
 				<executions>
 					<execution>
