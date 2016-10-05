@@ -258,11 +258,12 @@
 				            </goals>
 				            <configuration>
 				              <autocommit>true</autocommit>
-				              <sqlCommand>DROP DATABASE IF EXISTS jenkins_test_db</sqlCommand>
+				              <sqlCommand>DROP SCHEMA `jenkins_test_db`;</sqlCommand>
+				              <onError>continue</onError>
 				            </configuration>
-				          </execution>
+				        </execution>
 				          
-	                    <!--  execution>
+	                    <!-- execution>
 	                        <id>drop-and-create-blank-schema</id>
 	                        <phase>process-test-resources</phase>
 	                        <goals>
