@@ -278,6 +278,7 @@
 	                                <srcFile>src/test/resources/create_schema.sql</srcFile>
 	                            </srcFiles>
 	                            <onError>continue</onError>
+	                            <skip>${maven.test.skip}</skip>
 	                        </configuration>
 	                    </execution>
 
