@@ -154,19 +154,19 @@
 					</execution>
 				</executions>
 				
-					<container>
-						<timeout>2980000</timeout>
-						<containerId>jetty7x</containerId>
-						<type>embedded</type>
-						<!-- home>/opt/jetty</home-->
-						<dependencies>
-							<dependency>
-								<location>${basedir}/target/test-classes/</location>
-							</dependency>
-						</dependencies>
-				   </container>
-
 				   <configuration>
+				   		<container>
+							<timeout>2980000</timeout>
+							<containerId>jetty7x</containerId>
+							<type>embedded</type>
+							<!-- home>/opt/jetty</home-->
+							<dependencies>
+								<dependency>
+									<location>${basedir}/target/test-classes/</location>
+								</dependency>
+							</dependencies>
+					   </container>
+					   
 						<properties>
 							<cargo.servlet.port>8181</cargo.servlet.port>
 							<cargo.logging>medium</cargo.logging>
