@@ -242,7 +242,6 @@
 		
 	                <configuration>
 	                    <driver>com.mysql.jdbc.Driver</driver>
-	                    <url>jdbc:mysql://localhost:3306?useUnicode=true&amp;characterEncoding=UTF-8</url>
 	                    <username>${db.user}</username>
 	                    <password>${db.password}</password>
 	                     <skip>${maven.test.skip}</skip>
