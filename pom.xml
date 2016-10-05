@@ -167,10 +167,10 @@
 							</dependencies>
 					   </container>
 					   
-						<properties>
-							<cargo.servlet.port>8181</cargo.servlet.port>
-							<cargo.logging>medium</cargo.logging>
-						</properties>
+						<httpConnector>
+				          <!--host>localhost</host-->
+				          <port>9999</port>
+				        </httpConnector>
 						
 						<deployables>
 						
