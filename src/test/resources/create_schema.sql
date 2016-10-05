@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS `jenkins_test_db`;
+DROP SCHEMA IF EXISTS `jenkins_test_db`;
 CREATE SCHEMA `jenkins_test_db` ;
 USE `jenkins_test_db`;
 CREATE TABLE user(
