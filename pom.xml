@@ -103,6 +103,12 @@
 			<version>1.4.3</version>
 		</dependency>
 		
+		<dependency>
+		    <groupId>org.codehaus.mojo</groupId>
+		    <artifactId>dependency-maven-plugin</artifactId>
+		    <version>1.0</version>
+		</dependency>
+		
 		
 	</dependencies>
 
@@ -201,7 +207,13 @@
 	                <groupId>org.codehaus.mojo</groupId>
 	                <artifactId>sql-maven-plugin</artifactId>
 	                <version>3.0.0-SNAPSHOT</version>
-	                
+	                <dependencies>
+	                    <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.35</version>
+		</dependency>
+	                </dependencies>
 	                <configuration>
 	                    <driver>com.mysql.jdbc.Driver</driver>
 	                    <url>jdbc:mysql://localhost:3306/jenkins_test_db?useUnicode=true&amp;characterEncoding=UTF-8</url>
