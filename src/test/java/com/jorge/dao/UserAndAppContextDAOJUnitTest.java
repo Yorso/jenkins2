@@ -81,7 +81,7 @@ public class UserAndAppContextDAOJUnitTest {
 	@Test
 	public void testAdd() {
 		User user = new User();
-		ArrayList<User> listUser = new ArrayList<User>();
+		ArrayList<User> listUser = new ArrayList<User>();	
 		
 		for(int i=0; i<4; i++){
 			user = new User("Name" + String.valueOf(i + 1), 30 + i + 1);
