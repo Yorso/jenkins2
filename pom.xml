@@ -285,7 +285,7 @@
 						<configuration>
 							<!-- ... or make a reference to a sql file in project -->
 							<srcFiles>
-								<srcFile>src/test/resources/create_schema.sql</srcFile>
+								<srcFile>src/test/resources/sql/create_schema.sql</srcFile>
 							</srcFiles>
 						</configuration>
 					</execution>
@@ -298,7 +298,7 @@
 						</goals>
 						<configuration>
 							<srcFiles>
-								<srcFile>src/test/resources/create_user_table.sql</srcFile>
+								<srcFile>src/test/resources/sql/create_user_table.sql</srcFile>
 							</srcFiles>
 						</configuration>
 					</execution>
@@ -311,7 +311,7 @@
 						</goals>
 						<configuration>
 							<srcFiles>
-								<srcFile>src/test/resources/insert_data.sql</srcFile>
+								<srcFile>src/test/resources/sql/insert_data.sql</srcFile>
 							</srcFiles>
 						</configuration>
 					</execution>
