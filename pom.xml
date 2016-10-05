@@ -155,11 +155,11 @@
 				</executions>
 				
 				   <configuration>
+				   		<stopPort>9999</stopPort>
 				   		<container>
 							<timeout>2980000</timeout>
 							<containerId>jetty7x</containerId>
 							<type>embedded</type>
-							<port>9998</port>
 							<!-- home>/opt/jetty</home-->
 							<dependencies>
 								<dependency>
@@ -168,11 +168,6 @@
 							</dependencies>
 					   </container>
 					   
-						<httpConnector>
-				          <!--host>localhost</host-->
-				          <port>9999</port>
-				        </httpConnector>
-						
 						<deployables>
 						
 	                         <deployable>
