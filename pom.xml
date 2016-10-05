@@ -269,6 +269,7 @@
 	                            <srcFiles>
 	                                <srcFile>src/test/resources/create_schema.sql</srcFile>
 	                            </srcFiles>
+	                            <onError>continue</onError>
 	                        </configuration>
 	                    </execution>
 
