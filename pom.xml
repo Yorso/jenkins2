@@ -242,10 +242,10 @@
 		
 	                <configuration>
 	                    <driver>com.mysql.jdbc.Driver</driver>
-	                    <url>jdbc:mysql://localhost:3306/jenkins_test_db?useUnicode=true&amp;characterEncoding=UTF-8</url>
+	                    <url>jdbc:mysql://localhost:3306?useUnicode=true&amp;characterEncoding=UTF-8</url>
 	                    <username>${db.user}</username>
 	                    <password>${db.password}</password>
-	                    <onError>continue</onError>
+	                     <skip>${maven.test.skip}</skip>
 	                </configuration>
 	                
 	                <executions>
@@ -270,6 +270,7 @@
 	                            <goal>execute</goal>
 	                        </goals>
 	                        <configuration>
+	                        	<url>jdbc:mysql://localhost:3306/jenkins_test_db?useUnicode=true&amp;characterEncoding=UTF-8</url>
 	                            <autocommit>true</autocommit>
 	                            <srcFiles>
 	                                <srcFile>src/test/resources/create_schema.sql</srcFile>
