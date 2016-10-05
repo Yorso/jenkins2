@@ -245,7 +245,7 @@
 	                    <url>jdbc:mysql://localhost:3306/jenkins_test_db?useUnicode=true&amp;characterEncoding=UTF-8</url>
 	                    <username>${db.user}</username>
 	                    <password>${db.password}</password>
-	                    <skip>true</skip>
+	                    <onError>continue</onError>
 	                </configuration>
 	                
 	                <executions>
@@ -258,7 +258,7 @@
 				            </goals>
 				            <configuration>
 				              <autocommit>true</autocommit>
-				              <sqlCommand>DROP SCHEMA `jenkins_test_db`;</sqlCommand>
+				              <sqlCommand>DROP SCHEMA IF EXISTS `jenkins_test_db`;</sqlCommand>
 				              <onError>continue</onError>
 				            </configuration>
 				        </execution>
