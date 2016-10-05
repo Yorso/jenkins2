@@ -44,7 +44,7 @@ public class UserDAO {
 	 * 
 	 */
 	public void add(User user) {
-		String sql = "insert into user (firstName, age) values (?, ?)";
+		String sql = "insert into user (first_name, age) values (?, ?)";
 		jdbcTemplate.update(sql, user.getFirstName(), user.getAge());
 	}
 	
@@ -110,7 +110,7 @@ public class UserDAO {
 	 * 
 	 */
 	public List<User> findAllObjects() {
-		String sql = "select u.id, u.firstName, u.age, p.id as p_id, p.title as p_title, p.date as p_date from user u left join post p on p.user_id = u.id	order by u.id asc, p.date desc";
+		String sql = "select u.id, u.first_name, u.age, p.id as p_id, p.title as p_title, p.date as p_date from user u left join post p on p.user_id = u.id	order by u.id asc, p.date desc";
 		return jdbcTemplate.query(sql, new UserWithPosts());
 	}
 	
@@ -123,7 +123,7 @@ public class UserDAO {
 	 * 
 	 */
 	public void update(User user) {
-		String sql = "update user set firstName=?, age=? where id=?";
+		String sql = "update user set first_name=?, age=? where id=?";
 		jdbcTemplate.update(sql, user.getFirstName(), user.getAge(), user.getId());
 	}
 	
@@ -174,7 +174,7 @@ public class UserDAO {
 	 * 
 	 */
 	public void add(List<User> userList) {
-		String sql = "insert into user (firstName, age) values (?, ?)";
+		String sql = "insert into user (first_name, age) values (?, ?)";
 		List<Object[]> userRows = new ArrayList<Object[]>();
 		
 		for (User user : userList) {
@@ -200,7 +200,7 @@ public class UserDAO {
 		public User mapRow(ResultSet row, int rowNum) throws SQLException {
 			User user = new User();
 			user.setId(row.getLong("id"));
-			user.setFirstName(row.getString("firstName"));
+			user.setFirstName(row.getString("first_name"));
 			user.setAge(row.getInt("age"));
 			return user;
 		}
@@ -224,7 +224,7 @@ public class UserDAO {
 				if(u == null) {
 					u = new User();
 					u.setId(id);
-					u.setFirstName(rs.getString("firstName"));
+					u.setFirstName(rs.getString("first_name"));
 					u.setAge(rs.getInt("age"));
 					userMap.put(id, u);
 				}
