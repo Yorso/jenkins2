@@ -327,8 +327,8 @@
                     
                      <configuration>
                     	<providerSelection>1.8</providerSelection>
-                    	<source>println "I am building version ${project.version} of ${project.name} at ${new Date()}"</source>
-                        <!-- source>${basedir}/src/test/resources/nosql/pre-populate-docrepo-mongo.groovy</source -->
+                    	<!-- source>println "I am building version ${project.version} of ${project.name} at ${new Date()}"</source -->
+                        <source>${basedir}/src/test/resources/nosql/example.groovy</source>
                     </configuration>
                     
                     
