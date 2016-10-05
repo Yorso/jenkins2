@@ -12,6 +12,8 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<spring.version>4.3.0.RELEASE</spring.version>
+		<db.password>user1pass</db.password>
+        <db.user>user1</db.user>
 	</properties>
 
 	<!-- <parent> <groupId>com.firecrestclinical.patient-portal</groupId> <artifactId>patient-portal-uat</artifactId> 
@@ -51,11 +53,11 @@
 		</dependency>
 
 		<!-- MySQL DataBase Connector -->
-		<dependency>
+		<!-- dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.35</version>
-		</dependency>
+		</dependency -->
 
 		<!-- MongoDB -->
 	    <dependency>
@@ -105,137 +107,175 @@
 	</dependencies>
 
 	<build>
-		<!-- finalName>jenkins2</finalName-->
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.surefire</groupId>
-						<artifactId>surefire-junit47</artifactId>
-						<version>2.19.1</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.cargo</groupId>
-				<artifactId>cargo-maven2-plugin</artifactId>
-				<version>1.4.2</version>
-				
-				<executions>
-					<execution>
-						<id>start-container</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>start</goal>
-						</goals>
-						<configuration>
-							<wait>false</wait>
-						</configuration>
-					</execution>
-					<execution>
-						<id>stop-container</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>stop</goal>
-						</goals>
-					</execution>
-				</executions>
-				
-				   <configuration>
-				   		
-				   		<container>
-							<timeout>2980000</timeout>
-							<containerId>jetty7x</containerId>
-							<type>embedded</type>
-							<!-- home>/opt/jetty</home-->
-							<dependencies>
-								<dependency>
-									<location>${basedir}/target/test-classes/</location>
-								</dependency>
-							</dependencies>
-					   </container>
-					   
-					   <configuration>
-						   <properties>
-	                            <cargo.servlet.port>8181</cargo.servlet.port>
-	                            <cargo.logging>medium</cargo.logging>
-	                        </properties>
-                        </configuration>
-                        
-						<deployables>
-						
-	                         <deployable>
-	                             <groupId>com.jorge</groupId>
-	                             <artifactId>jenkins2</artifactId>
-	                             <type>war</type>
-	                             <properties>
-	                                 <context>/jenkins2</context>
-	                             </properties>
-	                         </deployable>
+		<pluginManagement>
+			<!-- finalName>jenkins2</finalName-->
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
 	
-	                     </deployables>
-
-                   </configuration>   
-
-
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.19.1</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.surefire</groupId>
+							<artifactId>surefire-junit47</artifactId>
+							<version>2.19.1</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+	
+				<!-- Deployables -->
+				<plugin>
+					<groupId>org.codehaus.cargo</groupId>
+					<artifactId>cargo-maven2-plugin</artifactId>
+					<version>1.4.2</version>
 					
-			</plugin>
-			
-			<!-- plugin>
-			    <groupId>org.mortbay.jetty</groupId>
-			    <artifactId>jetty-maven-plugin</artifactId>
-			    <version>8.1.9.v20130131</version>
-			    <configuration>
-				     <stopKey>STOP</stopKey>
-				     <stopPort>9999</stopPort>
-				     <scanIntervalSeconds>5</scanIntervalSeconds>
-				     <webAppConfig>
-				      	<contextPath>/${project.artifactId}</contextPath>
-				     </webAppConfig>
-				     <connectors>
-				     		<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-				       			<port>8181</port>
-				      		</connector>
-				     </connectors>	
-				     <war>${project.build.directory}/copied-from-server-project.war</war>													
-			    </configuration>
-			    <executions>
-				     <execution>
-					      <id>start-jetty</id>
-					      <phase>pre-integration-test</phase>
-					      <goals>
-					       	<goal>stop</goal>
-					       	<goal>deploy-war</goal>
-					      </goals>
-					      <configuration>
-					       	<scanIntervalSeconds>0</scanIntervalSeconds>
-					       	<daemon>true</daemon>
-					      </configuration>
-					     </execution>
+					<executions>
+						<execution>
+							<id>start-container</id>
+							<phase>pre-integration-test</phase>
+							<goals>
+								<goal>start</goal>
+							</goals>
+							<configuration>
+								<wait>false</wait>
+							</configuration>
+						</execution>
+						<execution>
+							<id>stop-container</id>
+							<phase>post-integration-test</phase>
+							<goals>
+								<goal>stop</goal>
+							</goals>
+						</execution>
+					</executions>
+					
+					   <configuration>
+					   		
+					   		<container>
+								<timeout>2980000</timeout>
+								<containerId>jetty7x</containerId>
+								<type>embedded</type>
+								<!-- home>/opt/jetty</home-->
+								<dependencies>
+									<dependency>
+										<location>${basedir}/target/test-classes/</location>
+									</dependency>
+								</dependencies>
+						   </container>
+						   
+						   <configuration>
+							   <properties>
+		                            <cargo.servlet.port>8181</cargo.servlet.port>
+		                            <cargo.logging>medium</cargo.logging>
+		                        </properties>
+	                        </configuration>
+	                        
+							<deployables>
+							
+		                         <deployable>
+		                             <groupId>com.jorge</groupId>
+		                             <artifactId>jenkins2</artifactId>
+		                             <type>war</type>
+		                             <properties>
+		                                 <context>/jenkins2</context>
+		                             </properties>
+		                         </deployable>
+		
+		                     </deployables>
+	
+	                   </configuration>   
+						
+				</plugin>
+				
+				<!-- SQL -->
+				<plugin>
+	                <groupId>org.codehaus.mojo</groupId>
+	                <artifactId>sql-maven-plugin</artifactId>
+	                <version>3.0.0-SNAPSHOT</version>
+	                <dependencies>
+	                    <dependency>
+	                        <groupId>mysql</groupId>
+	                        <artifactId>mysql-connector-java</artifactId>
+	                        <!-- version>${mysql.connector.java.version}</version-->
+	                        <version>5.1.35</version>
+	                    </dependency>
+	                </dependencies>
+	                <configuration>
+	                    <driver>com.mysql.jdbc.Driver</driver>
+	                    <url>jdbc:mysql://localhost:3306/jenkins_test_db?useUnicode=true&amp;characterEncoding=UTF-8</url>
+	                    <username>${db.user}</username>
+	                    <password>${db.password}</password>
+	                    <skip>${maven.test.skip}</skip>
+	                </configuration>
+	                
+	                <executions>
+	                    <execution>
+	                        <id>drop-and-create-blank-schema</id>
+	                        <phase>process-test-resources</phase>
+	                        <goals>
+	                            <goal>execute</goal>
+	                        </goals>
+	                        <configuration>
+	                            <autocommit>true</autocommit>
+	                            <srcFiles>
+	                                <srcFile>src/test/resources/create_schema.sql</srcFile>
+	                            </srcFiles>
+	                        </configuration>
+	                    </execution>
+	                </executions>
+	            </plugin>
+				<!-- plugin>
+				    <groupId>org.mortbay.jetty</groupId>
+				    <artifactId>jetty-maven-plugin</artifactId>
+				    <version>8.1.9.v20130131</version>
+				    <configuration>
+					     <stopKey>STOP</stopKey>
+					     <stopPort>9999</stopPort>
+					     <scanIntervalSeconds>5</scanIntervalSeconds>
+					     <webAppConfig>
+					      	<contextPath>/${project.artifactId}</contextPath>
+					     </webAppConfig>
+					     <connectors>
+					     		<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+					       			<port>8181</port>
+					      		</connector>
+					     </connectors>	
+					     <war>${project.build.directory}/copied-from-server-project.war</war>													
+				    </configuration>
+				    <executions>
 					     <execution>
-					      	<id>stop-jetty</id>
-					      	<phase>post-integration-test</phase>
-					      	<goals>
-					       		<goal>stop</goal>
-					      	</goals>
-					     </execution>
-				</executions>
-		    </plugin-->
-
-		</plugins>
+						      <id>start-jetty</id>
+						      <phase>pre-integration-test</phase>
+						      <goals>
+						       	<goal>stop</goal>
+						       	<goal>deploy-war</goal>
+						      </goals>
+						      <configuration>
+						       	<scanIntervalSeconds>0</scanIntervalSeconds>
+						       	<daemon>true</daemon>
+						      </configuration>
+						     </execution>
+						     <execution>
+						      	<id>stop-jetty</id>
+						      	<phase>post-integration-test</phase>
+						      	<goals>
+						       		<goal>stop</goal>
+						      	</goals>
+						     </execution>
+					</executions>
+			    </plugin-->
+	
+			</plugins>
+		</pluginManagement>
 	</build>
-
+	
 </project>
