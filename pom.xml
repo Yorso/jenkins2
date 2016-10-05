@@ -260,7 +260,7 @@
 				              <!-- need another database to drop the targeted one -->
 				              <url>jdbc:mysql://localhost:3306/jenkins_test_db</url>
 				              <autocommit>true</autocommit>
-				              <sqlCommand>drop database if exists jenkins_test_db</sqlCommand>
+				              <sqlCommand>drop schema if exists jenkins_test_db</sqlCommand>
 				              <!-- ignore error when database is not avaiable -->
 				              <onError>continue</onError>
 				            </configuration>
