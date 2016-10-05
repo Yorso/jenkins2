@@ -6,4 +6,4 @@ import com.gmongo.GMongo
 def mongo = new GMongo() 
 
 // Get a reference to the db
-def db = mongo.getDB("physicianfinder")
+//def db = mongo.getDB("physicianfinder")
