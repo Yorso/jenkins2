@@ -116,13 +116,13 @@
 	<build>
 		<!-- finalName>jenkins2</finalName -->
 		<plugins>
-			<plugin>
+			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<configuration>
 					<escapeWindowsPaths>true</escapeWindowsPaths>
 				</configuration>
-			</plugin>
+			</plugin-->
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -133,24 +133,24 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
+			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
 					<skip>true</skip>
 				</configuration>
-			</plugin>
+			</plugin-->
 
-			<plugin>
+			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<configuration>
 					<attach>false</attach>
 					<skipSource>true</skipSource>
 				</configuration>
-			</plugin>
+			</plugin-->
 
-			<plugin>
+			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
@@ -161,9 +161,9 @@
 						<version>2.19.1</version>
 					</dependency>
 				</dependencies>
-			</plugin>
+			</plugin-->
 
-			<!-- Deployables -->
+			<!-- Jetty -->
 			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
@@ -228,7 +228,7 @@
 
 			</plugin>
 
-
+			<!-- MySQL -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>sql-maven-plugin</artifactId>
@@ -316,6 +316,35 @@
 				</executions>
 			</plugin>
 
+			<!-- MONGO  -->
+            <plugin>
+                    <groupId>org.codehaus.gmaven</groupId>
+                    <artifactId>gmaven-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <id>run-mongo-tests</id>
+                            <goals><goal>execute</goal></goals>
+                            <phase>pre-integration-test</phase>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                    <!-- MongoDB -->
+						<dependency>
+							<groupId>org.mongodb</groupId>
+							<artifactId>mongodb-driver</artifactId>
+							<version>3.3.0</version>
+						</dependency>
+                        <!-- dependency>
+                            <groupId>org.mongodb</groupId>
+                            <artifactId>mongo-java-driver</artifactId>
+                            <version>2.11.4</version>
+                        </dependency-->
+                    </dependencies>
+                    <configuration>
+                        <source>${basedir}/src/test/resources/nosql/pre-populate-docrepo-mongo.groovy</source>
+                    </configuration>
+            </plugin>
 
 			<!-- plugin> <groupId>org.mortbay.jetty</groupId> <artifactId>jetty-maven-plugin</artifactId> 
 				<version>8.1.9.v20130131</version> <configuration> <stopKey>STOP</stopKey> 
