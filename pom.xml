@@ -213,10 +213,10 @@
 							
 		                         <deployable>
 		                             <groupId>com.jorge</groupId>
-		                             <artifactId>jenkins2</artifactId>
+		                             <artifactId>jenkins2dsds</artifactId>
 		                             <type>war</type>
 		                             <properties>
-		                                 <context>/jenkins2ddd</context>
+		                                 <context>/jenkins2</context>
 		                             </properties>
 		                         </deployable>
 		
