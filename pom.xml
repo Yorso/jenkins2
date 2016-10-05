@@ -266,7 +266,6 @@
 				            </configuration>
 				          </execution>
 				          
-	                	<!-- 
 	                    <execution>
 	                        <id>drop-and-create-blank-schema</id>
 	                        <phase>process-test-resources</phase>
@@ -280,7 +279,7 @@
 	                            </srcFiles>
 	                        </configuration>
 	                    </execution>
-	                    -->
+
 	                </executions>
 	            </plugin>
 				
