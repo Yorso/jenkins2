@@ -1,0 +1,1 @@
+println "I am building version ${project.version} of ${project.name} at ${new Date()}"
