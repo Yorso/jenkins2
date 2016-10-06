@@ -1,5 +1,3 @@
-@Grab('org.mongodb:mongodb-driver:3.2.2')
-
 import com.mongodb.MongoClient
 import com.mongodb.DBCollection
 import com.mongodb.DB
