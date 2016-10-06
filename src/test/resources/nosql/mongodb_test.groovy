@@ -3,13 +3,12 @@ import com.mongodb.DBCollection
 import com.mongodb.DB
 import com.mongodb.BasicDBObject
 
-def databaseName = 'jenkins_test_db'
-
 class MongoService { 
     private MongoClient mongoClient 
 
     def host = "localhost" //your host name 
     def port = 27017 //your port. 
+    def databaseName = 'jenkins_test_db'
 
     public MongoClient client() {
         mongoClient = mongoClient ?: new MongoClient(host, port) 
@@ -24,7 +23,7 @@ class MongoService {
     }
 }
 
-def service = new MongoService(databaseName: databaseName)
+def service = new MongoService(databaseName: 'jenkins_test_db')
 def coll = service.collection('user')
 
 def data = [
