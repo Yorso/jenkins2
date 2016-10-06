@@ -8,7 +8,6 @@ class MongoService {
 
     def host = "localhost" //your host name 
     def port = 27017 //your port. 
-    def databaseName = 'jenkins_test_db'
 
     public MongoClient client() {
         mongoClient = mongoClient ?: new MongoClient(host, port) 
@@ -23,6 +22,7 @@ class MongoService {
     }
 }
 
+def databaseName = 'jenkins_test_db'
 def service = new MongoService(databaseName: databaseName)
 def coll = service.collection('user')
 
