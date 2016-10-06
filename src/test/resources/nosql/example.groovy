@@ -1,1 +1,2 @@
-println "I am building version ${project.version} of ${project.name} at ${new Date()}"
+@Grab(group='com.gmongo', module='gmongo', version='0.9.3') 
+import com.gmongo.GMongo 
