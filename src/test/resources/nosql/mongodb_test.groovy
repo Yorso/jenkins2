@@ -55,36 +55,6 @@ coll.find().toArray().each {
     println it
 }
 
-//Testing
-public class User {
-   String firstName;
-   String lastName;
-   int age;
-	
-   String Display() {
-   	  def u = coll.find(firstName:"Homer").toArray()
-      return u.firstName + " " + u.lastName + ", " + u.age;
-   }  
-}
+def u = coll.find(firstName:"Homer").toArray()
+println u.lastName
 
-class UserTest extends GroovyTestCase {
-   void testDisplay() {
-      def user = new User()
-      def expected = 'Homer Simpson, 38'
-      assertToString(user.Display(), expected)
-   }
-}
-
-import groovy.util.GroovyTestSuite 
-import junit.framework.Test 
-import junit.textui.TestRunner 
-
-class AllTests { 
-   static Test suite() { 
-      def allTests = new GroovyTestSuite() 
-      allTests.addTestSuite(UserTest.class) 
-      return allTests 
-   } 
-} 
-
-TestRunner.run(AllTests.suite())
