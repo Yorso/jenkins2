@@ -24,7 +24,7 @@ class MongoService {
     }
     
     public void dropDB(databaseName) { 
-        client().dropDB(databaseName); 
+        client().remove(databaseName); 
     }
 }
 
