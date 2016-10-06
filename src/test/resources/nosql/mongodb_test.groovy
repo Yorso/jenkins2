@@ -23,15 +23,15 @@ class MongoService {
         return db.getCollection(collectionName) 
     }
     
-    public void dropDatabase(dbn){
+    public void dropDB(dbn){
     	DB db = client().getDB(dbn)
-    	db.remove()
+    	db.dropDatabase()
     }
     
 }
 
 def service = new MongoService(databaseName: 'jenkinsdb')
-db2.dropDatabase('jenkinsdb');
+db2.dropDB('jenkinsdb');
 
 service = new MongoService(databaseName: 'jenkinsdb')
 def coll = service.collection('user')
