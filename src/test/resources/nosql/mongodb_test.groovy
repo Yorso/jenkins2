@@ -37,7 +37,7 @@ service = new MongoService(databaseName: 'jenkinsdb')
 def coll = service.collection('user')
 
 def data = [
-    [firstName: 'Peter', lastName: 'Parker', age: '36'],
+    [firstName: 'Peter', lastName: 'Parker', age: '32'],
     [firstName: 'Homer', lastName: 'Simpson', age: '38']
 ].collect { it as BasicDBObject }
 
