@@ -55,6 +55,6 @@ coll.find().toArray().each {
     println it
 }
 
-println coll.find(firstName:"Homer")
+println coll.findOne()
 
 
