@@ -34,7 +34,7 @@ class MongoService {
 def service = new MongoService(databaseName: 'jenkins_test_db')
 service.dropDB('jenkins_test_db');
 
-// Creating databe
+// Creating database
 service = new MongoService(databaseName: 'jenkins_test_db')
 
 // Creating a collection in db
