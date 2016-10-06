@@ -4,6 +4,7 @@ import com.mongodb.DB
 import com.mongodb.BasicDBObject
 
 class MongoService { 
+
     private MongoClient mongoClient 
 
     def host = "localhost" //your host name 
@@ -21,9 +22,14 @@ class MongoService {
 
         return db.getCollection(collectionName) 
     }
+    
+    public void dropDB(databaseName) { 
+        client().dropDB(databaseName); 
+    }
 }
 
 def service = new MongoService(databaseName: 'jenkinsdb')
+service.dropDB('jenkinsdb');
 def coll = service.collection('user')
 
 def data = [
