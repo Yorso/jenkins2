@@ -30,19 +30,26 @@ class MongoService {
     
 }
 
+// Deleting database
 def service = new MongoService(databaseName: 'jenkinsdb')
 service.dropDB('jenkinsdb');
 
+// Creating databe
 service = new MongoService(databaseName: 'jenkinsdb')
+
+// Creating a collection in db
 def coll = service.collection('user')
 
+// Setting data
 def data = [
     [firstName: 'Peter', lastName: 'Parker', age: '32'],
     [firstName: 'Homer', lastName: 'Simpson', age: '38']
 ].collect { it as BasicDBObject }
 
+// Inserting data in collection
 coll.insert(data)
 
+// Displaying data collection
 coll.find().toArray().each {
     println it
 }
