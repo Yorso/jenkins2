@@ -62,7 +62,6 @@ public class User {
    int age;
 	
    String Display() {
-   	  db.doctor.find(last:"Wu") 
    	  def u = coll.find(firstName:"Homer").toArray()
       return u.firstName + " " + u.lastName + ", " + u.age;
    }  
