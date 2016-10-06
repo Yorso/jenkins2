@@ -3,7 +3,7 @@ class Example {
       Student mst = new Student();
       mst.name = "Joe";
       mst.ID = 1;
-      println(mst.Display())
+      println("mst.Display(): " + mst.Display())
    } 
 } 
  
@@ -12,7 +12,7 @@ public class Student {
    int ID;
 	
    String Display() {
-      return name +ID;
+      return name + ID;
    }  
 }
 
