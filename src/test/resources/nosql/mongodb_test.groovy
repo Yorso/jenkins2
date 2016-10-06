@@ -7,8 +7,8 @@ class MongoService {
     private MongoClient mongoClient 
 
     def host = "localhost" //your host name 
-    def port = 27017 //your port no. 
-    def databaseName = 'test'
+    def port = 27017 //your port. 
+    def databaseName = 'jenkins_test_db'
 
     public MongoClient client() {
         mongoClient = mongoClient ?: new MongoClient(host, port) 
@@ -23,16 +23,16 @@ class MongoService {
     }
 }
 
-def service = new MongoService(databaseName: 'db')
-def foo = service.collection('foo')
+def service = new MongoService(databaseName: databaseName)
+def coll = service.collection('user')
 
 def data = [
-    [firstName: 'Jane', lastName: 'Doe'],
-    [firstName: 'Elvis', lastName: 'Presley']
+    [firstName: 'Peter', lastName: 'Parker', age: '34'],
+    [firstName: 'Homer', lastName: 'Simpson', age: '38']
 ].collect { it as BasicDBObject }
 
-foo.insert(data)
+coll.insert(data)
 
-foo.find().toArray().each {
+coll.find().toArray().each {
     println it
 }
