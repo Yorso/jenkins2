@@ -55,6 +55,6 @@ coll.find().toArray().each {
     println it
 }
 
-def u = coll.find(firstName:"Homer").toArray()
+def u = coll.findOne(firstName:"Homer").toArray()
 println u.lastName
 
