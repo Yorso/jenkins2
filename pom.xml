@@ -353,7 +353,7 @@
                     </dependencies>
                     <configuration>
                     	<providerSelection>1.8</providerSelection>
-                        <source>${basedir}/src/test/resources/nosql/example2.groovy</source>
+                        <source>${basedir}/src/test/resources/nosql/example3.groovy</source>
                     </configuration>
             </plugin>
 		</plugins>
