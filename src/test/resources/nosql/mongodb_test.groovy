@@ -3,6 +3,8 @@ import com.mongodb.DBCollection
 import com.mongodb.DB
 import com.mongodb.BasicDBObject
 
+def databaseName = 'jenkins_test_db'
+
 class MongoService { 
     private MongoClient mongoClient 
 
@@ -22,7 +24,6 @@ class MongoService {
     }
 }
 
-def databaseName = 'jenkins_test_db'
 def service = new MongoService(databaseName: databaseName)
 def coll = service.collection('user')
 
