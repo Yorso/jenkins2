@@ -31,7 +31,7 @@ class MongoService {
 }
 
 def service = new MongoService(databaseName: 'jenkinsdb')
-db2.dropDB('jenkinsdb');
+service.dropDB('jenkinsdb');
 
 service = new MongoService(databaseName: 'jenkinsdb')
 def coll = service.collection('user')
