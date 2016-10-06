@@ -2,5 +2,5 @@
 def depFile = new File('/opt/tomcat8/.jenkins', 'deps.txt')
 
 project.dependencies.each() {
-  depFile.write("${it.groupId}:${it.artifactId}:${it.version}")
+  depFile.write("${it.groupId}:${it.artifactId}:${it.version}:${project.build.outputDirectory}")
 }
