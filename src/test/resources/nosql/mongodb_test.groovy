@@ -9,7 +9,7 @@ class MongoService {
 
     def host = "localhost" //your host name 
     def port = 27017 //your port. 
-    def databaseName = 'jenkinsdb'
+    def databaseName = 'jenkins_test_db'
 
     public MongoClient client() {
         mongoClient = mongoClient ?: new MongoClient(host, port) 
@@ -31,11 +31,11 @@ class MongoService {
 }
 
 // Deleting database
-def service = new MongoService(databaseName: 'jenkinsdb')
-service.dropDB('jenkinsdb');
+def service = new MongoService(databaseName: 'jenkins_test_db')
+service.dropDB('jenkins_test_db');
 
 // Creating databe
-service = new MongoService(databaseName: 'jenkinsdb')
+service = new MongoService(databaseName: 'jenkins_test_db')
 
 // Creating a collection in db
 def coll = service.collection('user')
