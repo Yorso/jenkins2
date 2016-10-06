@@ -340,16 +340,19 @@
 							<version>3.3.0</version>
 						</dependency>
                         
+                        <!-- We need these two dependencies to MongoDB testing with Groovy -->
                         <dependency>
 					        <groupId>org.codehaus.gmaven.runtime</groupId>
 					        <artifactId>gmaven-runtime-1.8</artifactId>
 					        <version>${gmaven.version}</version>
 					      </dependency>
+					      
 					      <dependency>
 					        <groupId>org.codehaus.groovy</groupId>
 					        <artifactId>groovy-all</artifactId>
 					        <version>${groovy.version}</version>
 					      </dependency>
+					      
                     </dependencies>
                     <configuration>
                     	<providerSelection>1.8</providerSelection>
