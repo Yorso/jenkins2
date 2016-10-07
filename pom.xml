@@ -337,11 +337,11 @@
                         </execution>
                     </executions>
                     <dependencies>
-                        <dependency>
+                        <!-- dependency>
 							<groupId>org.mongodb</groupId>
 							<artifactId>mongodb-driver</artifactId>
 							<version>3.3.0</version>
-						</dependency>
+						</dependency-->
                         
                         <!-- We need these two dependencies to MongoDB testing with Groovy -->
                         <dependency>
