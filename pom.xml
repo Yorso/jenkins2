@@ -17,14 +17,16 @@
 		<gmaven.version>1.5</gmaven.version>
 		<maven.war.version>2.6</maven.war.version>
 		<cargo.maven.version>1.4.2</cargo.maven.version>
-		<mysql.version>5.1.9</mysql.version>
+		<mysql.version>5.1.35</mysql.version>
 		<mongodb.version>3.3.0</mongodb.version>
 		<javax.servlet.version>3.1.0</javax.servlet.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.10</junit.version>
 		<hamcrest.version>1.3</hamcrest.version>
 		<sql.maven.version>1.5</sql.maven.version>
 		<spring.test.version>4.1.1.RELEASE</spring.test.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jetty.version>6.1.25</jetty.version>
+		<jstl.version>1.2</jstl.version>
 	</properties>
 
 	<dependencies>
@@ -49,14 +51,45 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
-		<!-- Spring JDBC -->
+		
+		<!-- JSTL -->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>${spring.version}</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
 
+		<!-- spring-test Maven dependency for testing a method using the Spring's application context with JUnit 4 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.test.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- Necessary for unit testing controller methods -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>${hamcrest.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- Spring JDBC -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-jdbc</artifactId>
+    		<version>${spring.version}</version>
+		</dependency>
+		
 		<!-- MySQL DataBase Connector -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -75,38 +108,14 @@
 		<dependency>
 			<groupId>org.mortbay.jetty</groupId>
 			<artifactId>jetty</artifactId>
-			<version>6.1.25</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- JUnit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- spring-test Maven dependency for testing a method using the Spring's 
-			application context with JUnit 4 -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.test.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- Necessary for unit testing controller methods -->
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-all</artifactId>
-			<version>${hamcrest.version}</version>
+			<version>${jetty.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+		
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
