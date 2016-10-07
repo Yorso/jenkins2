@@ -100,7 +100,7 @@
 		</dependency>
 
 		<!-- Codehaus -->
-		<dependency>
+		<!-- dependency>
 			<groupId>org.codehaus.cargo</groupId>
 			<artifactId>cargo-core-api-module</artifactId>
 			<version>1.4.3</version>
@@ -111,7 +111,7 @@
             <artifactId>groovy-all</artifactId>
             <version>1.8.5</version>
             <scope>test</scope>
-        </dependency>
+        </dependency-->
 
 		<!-- dependency>
 			<groupId>org.codehaus.mojo</groupId>
