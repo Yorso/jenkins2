@@ -126,3 +126,6 @@ db.inRequest {
     assert 1 == db.languages.count(name: 'Objective-C')
 }
 
+db.languages.find().toArray().each {
+    println it
+}
