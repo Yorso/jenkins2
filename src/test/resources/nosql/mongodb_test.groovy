@@ -55,9 +55,4 @@ coll.find().toArray().each {
     println it
 }
 
-def u = [[firstName: 'Peter', lastName: 'Parker', age: '32']].collect { it as BasicDBObject }
-coll.findOne(u).toArray.each{
- println it
-}
-
 
