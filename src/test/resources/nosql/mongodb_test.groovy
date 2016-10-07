@@ -56,13 +56,13 @@ coll.find().toArray().each {
     println it
 }
 
-
+// TESTING
 // Instantiate a com.gmongo.GMongo object instead of com.mongodb.Mongo
 // The same constructors and methods are available here
 def mongo = new GMongo()
 
 // Get a db reference in the old fashion way
-def db = mongo.getDB("gmongo")
+def db = mongo.getDB("jenkins_test_db")
 
 // Collections can be accessed as a db property (like the javascript API)
 assert db.myCollection instanceof com.mongodb.DBCollection
@@ -126,4 +126,6 @@ db.inRequest {
     assert 1 == db.languages.count(name: 'Objective-C')
 }
 
-
+db.languages.find().toArray().each {
+    println it
+}
