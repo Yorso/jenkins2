@@ -274,7 +274,7 @@
 						<goals>
 							<goal>execute</goal>
 						</goals>
-						<phase>pre-integration-test</phase>
+						<phase>integration-test</phase>
 					</execution>
 				</executions>
 				
