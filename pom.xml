@@ -105,7 +105,6 @@
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 			<version>${mongodb.version}</version>
-			<scope>compile</scope>
 		</dependency>
 
 		<!-- Jetty -->
@@ -121,6 +120,7 @@
 			<groupId>com.gmongo</groupId>
 			<artifactId>gmongo</artifactId>
 			<version>${gmongo.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- Groovy -->
@@ -128,7 +128,8 @@
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-ant</artifactId>
 			<version>${groovy.version}</version>
-			<scope>compile</scope>
+			<!-- scope>compile</scope -->
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
@@ -140,7 +141,8 @@
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy</artifactId>
 			<version>${groovy.version}</version>
-			<scope>compile</scope>
+			<!-- scope>compile</scope -->
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
