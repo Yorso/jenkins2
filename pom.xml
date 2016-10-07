@@ -212,7 +212,6 @@
 					<password>${db.password}</password>
 					<autocommit>true</autocommit>
 					<onError>continue</onError>
-					<skip>${maven.test.skip}</skip>
 				</configuration>
 
 				<executions>
