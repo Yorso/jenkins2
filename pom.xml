@@ -18,7 +18,7 @@
 		<maven.war.version>2.6</maven.war.version>
 		<cargo.maven.version>1.4.2</cargo.maven.version>
 		<mysql.version>5.1.35</mysql.version>
-		<mongodb.version>3.3.0</mongodb.version>
+		<mongodb.version>2.13.0</mongodb.version>
 		<javax.servlet.version>3.1.0</javax.servlet.version>
 		<junit.version>4.10</junit.version>
 		<hamcrest.version>1.3</hamcrest.version>
@@ -27,6 +27,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jetty.version>6.1.25</jetty.version>
 		<jstl.version>1.2</jstl.version>
+		<groovy.version>2.4.1</groovy.version>
+		<gmongo.version>1.3</gmongo.version>
 	</properties>
 
 	<dependencies>
@@ -51,14 +53,14 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- JSTL -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
 		</dependency>
-		
+
 		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -67,14 +69,15 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- spring-test Maven dependency for testing a method using the Spring's application context with JUnit 4 -->
+		<!-- spring-test Maven dependency for testing a method using the Spring's 
+			application context with JUnit 4 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.test.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Necessary for unit testing controller methods -->
 		<dependency>
 			<groupId>org.hamcrest</groupId>
@@ -82,14 +85,14 @@
 			<version>${hamcrest.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Spring JDBC -->
 		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-jdbc</artifactId>
-    		<version>${spring.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- MySQL DataBase Connector -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -100,8 +103,9 @@
 		<!-- MongoDB -->
 		<dependency>
 			<groupId>org.mongodb</groupId>
-			<artifactId>mongodb-driver</artifactId>
+			<artifactId>mongo-java-driver</artifactId>
 			<version>${mongodb.version}</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- Jetty -->
@@ -111,57 +115,43 @@
 			<version>${jetty.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
-		
-		
-		
-<dependency>
-    <groupId>com.gmongo</groupId>
-    <artifactId>gmongo</artifactId>
-    <version>1.3</version>
-</dependency>
-		
-		
-		<!-- dependency>
-<groupId>org.mongodb</groupId>
-<artifactId>mongo-java-driver</artifactId>
-<version>2.13.0</version>
-<scope>compile</scope>
-</dependency-->
-<dependency>
-<groupId>org.codehaus.groovy</groupId>
-<artifactId>groovy-ant</artifactId>
-<version>2.4.1</version>
-<scope>compile</scope>
-</dependency>
-<dependency>
-<groupId>org.codehaus.groovy</groupId>
-<artifactId>groovy-test</artifactId>
-<version>2.4.1</version>
-<scope>test</scope>
-</dependency>
 
-<dependency>
-<groupId>org.codehaus.groovy</groupId>
-<artifactId>groovy</artifactId>
-<version>2.4.1</version>
-<scope>compile</scope>
-</dependency>
+		<!-- Gmongo -->
+		<dependency>
+			<groupId>com.gmongo</groupId>
+			<artifactId>gmongo</artifactId>
+			<version>${gmongo.version}</version>
+		</dependency>
 
-
-
-
+		<!-- Groovy -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-ant</artifactId>
+			<version>${groovy.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-test</artifactId>
+			<version>${groovy.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy</artifactId>
+			<version>${groovy.version}</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-		
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>${maven.war.version}</version>
-				
+
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
@@ -184,7 +174,7 @@
 							<wait>false</wait>
 						</configuration>
 					</execution>
-					
+
 					<execution>
 						<id>stop-container</id>
 						<phase>post-integration-test</phase>
@@ -316,7 +306,7 @@
 				<groupId>org.codehaus.gmaven</groupId>
 				<artifactId>gmaven-plugin</artifactId>
 				<version>${gmaven.version}</version>
-				
+
 				<executions>
 					<execution>
 						<id>run-mongo-tests</id>
@@ -326,22 +316,12 @@
 						<phase>integration-test</phase>
 					</execution>
 				</executions>
-				
+
 				<configuration>
 					<providerSelection>1.8</providerSelection>
 					<source>${basedir}/src/test/resources/nosql/mongodb_test.groovy</source>
 				</configuration>
 			</plugin>
-			
-			
-			
-			
-			
-
-
-            
-            
-            
 		</plugins>
 	</build>
 </project>
