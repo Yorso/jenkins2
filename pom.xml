@@ -141,10 +141,6 @@
 			<version>${groovy.version}</version>
 			<scope>compile</scope>
 		</dependency>
-
-
-
-
 	</dependencies>
 
 	<build>
@@ -325,16 +321,6 @@
 					<source>${basedir}/src/test/resources/nosql/mongodb_test.groovy</source>
 				</configuration>
 			</plugin>
-
-
-
-
-
-
-
-
-
-
 		</plugins>
 	</build>
 </project>
