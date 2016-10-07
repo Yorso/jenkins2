@@ -104,7 +104,6 @@
 	</dependencies>
 
 	<build>
-		<!-- finalName>jenkins2</finalName -->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -148,7 +147,6 @@
 						<timeout>2980000</timeout>
 						<containerId>jetty7x</containerId>
 						<type>embedded</type>
-						<!-- home>/opt/jetty</home -->
 						<dependencies>
 							<dependency>
 								<location>${basedir}/target/test-classes/</location>
@@ -199,7 +197,6 @@
 						continue' in general configuration and 'IF EXISTS' in 'sqlCommand'. They 
 						don't work and give us an error -->
 					<url>jdbc:mysql://localhost:3306?useUnicode=true&amp;characterEncoding=UTF-8</url>
-					<!-- url>jdbc:mysql://localhost:3306/jenkins_test_db?useUnicode=true&amp;characterEncoding=UTF-8</url -->
 					<username>${db.user}</username>
 					<password>${db.password}</password>
 					<autocommit>true</autocommit>
