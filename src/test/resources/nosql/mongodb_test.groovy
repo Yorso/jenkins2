@@ -1,3 +1,5 @@
+@Grab(group='com.gmongo', module='gmongo', version='1.0')
+
 import com.mongodb.MongoClient
 import com.mongodb.DBCollection
 import com.mongodb.DB
