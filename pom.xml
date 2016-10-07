@@ -24,6 +24,7 @@
 		<hamcrest.version>1.3</hamcrest.version>
 		<sql.maven.version>1.5</sql.maven.version>
 		<spring.test.version>4.1.1.RELEASE</spring.test.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
