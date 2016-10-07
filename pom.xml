@@ -191,13 +191,13 @@
 				<artifactId>sql-maven-plugin</artifactId>
 				<version>${sql.maven.version}</version>
 
-				<!-- dependencies>
+				<dependencies>
 					<dependency>
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
-						<version>5.1.9</version>
+						<version>${mysql.version}</version>
 					</dependency>
-				</dependencies -->
+				</dependencies>
 
 				<!-- General configuration for all executes below -->
 				<configuration>
