@@ -33,15 +33,9 @@
 	
 	<!-- Configuración del repositorio -->
 	<scm>
-	   <connection>
-	     https://github.com/Yorso/jenkins2.git
-	   </connection>
-	   <developerConnection>
-	     https://github.com/Yorso/jenkins2.git
-	   </developerConnection>
-	   <url>
-	      http://github.com/Yorso/jenkins2
-	   </url>
+	    <connection>scm:git:git@github.com:sonatype/Yorso/jenkins2.git</connection>
+	    <developerConnection>scm:git:git@github.com:Yorso/jenkins2.git</developerConnection>
+	    <url>ttp://github.com/Yorso/jenkins2</url>
 	</scm>
 
 	<distributionManagement>
