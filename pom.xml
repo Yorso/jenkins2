@@ -32,7 +32,7 @@
 	</properties>
 	
 	<!-- Configuración del repositorio -->
-	<scm>
+	<!-- scm>
 	   <connection>
 	     scm:git:git://github.com/Yorso/jenkins2.git
 	   </connection>
@@ -42,7 +42,7 @@
 	   <url>
 	      https://github.com/Yorso/jenkins2
 	   </url>
-	</scm>
+	</scm-->
 
 	<distributionManagement>
       <!-- use the following if you're not using a release version. -->
