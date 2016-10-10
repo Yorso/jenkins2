@@ -30,6 +30,21 @@
 		<groovy.version>2.4.1</groovy.version>
 		<gmongo.version>1.3</gmongo.version>
 	</properties>
+	
+	<distributionManagement>
+      <!-- use the following if you're not using a release version. -->
+      <repository>
+         <id>nexus-jenkins2</id>
+         <name>Production repository</name>
+         <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
+      </repository>
+      <!-- use the following if you ARE using a snapshot version. -->
+      <snapshotRepository>
+         <id>nexus-jenkins2</id>
+         <name>Development repository</name>
+         <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
+      </snapshotRepository>
+   </distributionManagement>
 
 	<dependencies>
 		<!-- Servlet API -->
