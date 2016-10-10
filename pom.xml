@@ -35,7 +35,7 @@
 	<scm>
 	    <connection>scm:git:git@github.com:Yorso/jenkins2.git</connection>
 	    <developerConnection>scm:git:git@github.com:Yorso/jenkins2.git</developerConnection>
-	    <url>ttp://github.com/Yorso/jenkins2</url>
+	    <url>http://github.com/Yorso/jenkins2</url>
 	</scm>
 
 	<distributionManagement>
