@@ -43,13 +43,13 @@
       <repository>
          <id>nexus</id>
          <name>Production repository</name>
-         <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
+         <url>http://master:8081/nexus/content/repositories/releases</url>
       </repository>
       <!-- use the following if you ARE using a snapshot version. -->
       <snapshotRepository>
          <id>nexus</id>
          <name>Development repository</name>
-         <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
+         <url>http://master:8081/nexus/content/repositories/snapshots/</url>
       </snapshotRepository>
    </distributionManagement>
 
@@ -171,36 +171,7 @@
 	<build>
 		<plugins>
 		
-		            <plugin>
-
-                <groupId>org.apache.maven.plugins</groupId>
-
-                <artifactId>maven-compiler-plugin</artifactId>
-
-                <version>2.3.2</version>
-
-                <configuration>
-
-                    <source>${jdk.version}</source>
-
-                    <target>${jdk.version}</target>
-
-                    <encoding>${project.build.sourceEncoding}</encoding>
-
-                </configuration>
-
-            </plugin>
-
-            <plugin>
-
-                <groupId>org.apache.maven.plugins</groupId>
-
-                <artifactId>maven-release-plugin</artifactId>
-
-                <version>2.4.2</version>
-
-            </plugin>
-            
+		            
             
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
