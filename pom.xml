@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
@@ -41,13 +41,13 @@
 	<distributionManagement>
       <!-- use the following if you're not using a release version. -->
       <repository>
-         <id>nexus-jenkins2</id>
+         <id>nexus</id>
          <name>Production repository</name>
          <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
       </repository>
       <!-- use the following if you ARE using a snapshot version. -->
       <snapshotRepository>
-         <id>nexus-jenkins2</id>
+         <id>nexus</id>
          <name>Development repository</name>
          <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
       </snapshotRepository>
