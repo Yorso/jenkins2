@@ -3,10 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
-	<artifactId>jenkins2</artifactId>
+	<artifactId>jenkins3</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>jenkins2</name>
+	<name>jenkins3</name>
 	<description>Jenkins testing</description>
 
 	<properties>
@@ -233,10 +233,10 @@
 					<deployables>
 						<deployable>
 							<groupId>com.jorge</groupId>
-							<artifactId>jenkins2</artifactId>
+							<artifactId>jenkins3</artifactId>
 							<type>war</type>
 							<properties>
-								<context>/jenkins2</context>
+								<context>/jenkins3</context>
 							</properties>
 						</deployable>
 					</deployables>
