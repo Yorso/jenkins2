@@ -54,11 +54,13 @@ public class AppConfig{
 	// Database connection details
 	@Bean
 	public DataSource dataSource() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		/*DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/test1");
 		dataSource.setUsername("user1");
 		dataSource.setPassword("user1pass");
+		return dataSource;*/
+		DriverManagerDataSource dataSource = null;
 		return dataSource;
 	}
 	
