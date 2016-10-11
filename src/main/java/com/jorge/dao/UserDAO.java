@@ -25,8 +25,8 @@ import com.jorge.model.User;
 			   // error (a runtime exception), any modification made by the DAO method to the database will be rolled back.
 public class UserDAO {
 	
-	@Autowired // Dependency injection
-	private JdbcTemplate jdbcTemplate; // This field will be initialized automatically by Spring via dependency injection with
+	//@Autowired // Dependency injection
+	//private JdbcTemplate jdbcTemplate; // This field will be initialized automatically by Spring via dependency injection with
 									   // the JdbcTemplate bean defined previously in AppConfig.java
 
 	/**********
@@ -45,7 +45,7 @@ public class UserDAO {
 	 */
 	public void add(User user) {
 		String sql = "insert into user (first_name, age) values (?, ?)";
-		jdbcTemplate.update(sql, user.getFirstName(), user.getAge());
+		//jdbcTemplate.update(sql, user.getFirstName(), user.getAge());
 	}
 	
 	/**
@@ -58,8 +58,9 @@ public class UserDAO {
 	 */
 	public User findById(Long id) {
 		String sql = "select * from user where id=?";
-		User user = jdbcTemplate.queryForObject(sql, new Object[]{id}, new UserMapper());
-		return user;
+		//User user = jdbcTemplate.queryForObject(sql, new Object[]{id}, new UserMapper());
+		//return user;
+		return null;
 	}
 	
 	/**
@@ -94,8 +95,9 @@ public class UserDAO {
 	// TODO: test this method
 	public List<User> findAll() {
 		String sql = "select * from user";
-		List<User> userList = jdbcTemplate.query(sql, new UserMapper());
-		return userList;
+		//List<User> userList = jdbcTemplate.query(sql, new UserMapper());
+		//return userList;
+		return null;
 	}
 	
 	/**
@@ -111,7 +113,8 @@ public class UserDAO {
 	 */
 	public List<User> findAllObjects() {
 		String sql = "select u.id, u.first_name, u.age, p.id as p_id, p.title as p_title, p.date as p_date from user u left join post p on p.user_id = u.id	order by u.id asc, p.date desc";
-		return jdbcTemplate.query(sql, new UserWithPosts());
+		//return jdbcTemplate.query(sql, new UserWithPosts());
+		return null;
 	}
 	
 	/**
@@ -124,7 +127,7 @@ public class UserDAO {
 	 */
 	public void update(User user) {
 		String sql = "update user set first_name=?, age=? where id=?";
-		jdbcTemplate.update(sql, user.getFirstName(), user.getAge(), user.getId());
+		//jdbcTemplate.update(sql, user.getFirstName(), user.getAge(), user.getId());
 	}
 	
 	// It's convenient to also have a save() method that will create the database row if it doesn't exist:
@@ -147,7 +150,7 @@ public class UserDAO {
 	 */
 	public void delete(User user) {
 		String sql = "delete from user where id=?";
-		jdbcTemplate.update(sql, user.getId());
+		//jdbcTemplate.update(sql, user.getId());
 	}
 	
 	/**
@@ -162,7 +165,8 @@ public class UserDAO {
 	 */
 	public long countMinorUsers() {
 		String sql = "select count(*) from age < 18";
-		return jdbcTemplate.queryForObject(sql, Long.class);
+		//return jdbcTemplate.queryForObject(sql, Long.class);
+		return 0;
 	}
 	
 	/**
@@ -181,7 +185,7 @@ public class UserDAO {
 			userRows.add(new Object[] {user.getFirstName(), user.getAge()});
 		}
 		
-		jdbcTemplate.batchUpdate(sql, userRows);
+		//jdbcTemplate.batchUpdate(sql, userRows);
 	}
 	
 	
