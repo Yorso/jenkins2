@@ -53,12 +53,12 @@ public class UserAndAppContextDAOJUnitTest {
 	// This method doesn't need @Transactional annotation at the beginning of this class
 	@Test
 	public void testListUsers() {
-		List<User> users = userDAO.findAll();
+		/*List<User> users = userDAO.findAll();
 		
 		for(User user : users){
 			System.out.println("Name: " + user.getFirstName());
 			System.out.println("Age: " + user.getAge());
-		}
+		}*/
 	}
 	
 	
@@ -80,7 +80,7 @@ public class UserAndAppContextDAOJUnitTest {
 	// This method needs @Transactional annotation  at the beginning of this class
 	@Test
 	public void testAdd() {
-		User user = new User();
+		/*User user = new User();
 		ArrayList<User> listUser = new ArrayList<User>();	
 		
 		for(int i=0; i<4; i++){
@@ -91,6 +91,6 @@ public class UserAndAppContextDAOJUnitTest {
 		for(User u : listUser){
 			System.out.println("Checking user: " + u.getFirstName() + " " + u.getAge());
 			userDAO.add(u);
-		}
+		}*/
 	}
 }
