@@ -31,16 +31,15 @@
 	</properties>
 	
 	<!-- Configuración del repositorio -->
-	<scm>
+	<!-- scm>
 	    <connection>scm:git:https://github.com/Yorso/jenkins2.git</connection>
 	    <developerConnection>scm:git:https://github.com/Yorso/jenkins2.git</developerConnection>
 	    <url>http://github.com/Yorso/jenkins2</url>
 	  <tag>HEAD</tag>
-  </scm>
+  </scm-->
 
 	<distributionManagement>
-      <repository>
-<<<<<<< HEAD
+    <repository>
       <id>nexus</id>
       <name>Nexus Releases</name>
       <url>http://localhost:8081/nexus/service/local/staging/deploy/maven2</url>
@@ -55,19 +54,7 @@
       <name>Nexus Sites</name>
       <url>dav:http://localhost:8081/nexus/content/sites/site/</url>
     </site>
-=======
-         <id>nexus</id>
-         <name>Production repository</name>
-         <url>http://master:8081/nexus/content/repositories/releases</url>
-      </repository>
-      <!-- use the following if you ARE using a snapshot version. -->
-      <snapshotRepository>
-         <id>nexus</id>
-         <name>Development repository</name>
-         <url>http://master:8081/nexus/content/repositories/snapshots/</url>
-      </snapshotRepository>
->>>>>>> branch 'master' of https://github.com/Yorso/jenkins2.git
-   </distributionManagement>
+  </distributionManagement>
 
 	<dependencies>
 		<!-- Servlet API -->
