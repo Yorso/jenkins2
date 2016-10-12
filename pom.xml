@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.1.20-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
@@ -36,10 +35,12 @@
 	    <connection>scm:git:https://github.com/Yorso/jenkins2.git</connection>
 	    <developerConnection>scm:git:https://github.com/Yorso/jenkins2.git</developerConnection>
 	    <url>http://github.com/Yorso/jenkins2</url>
-	</scm>
+	  <tag>HEAD</tag>
+  </scm>
 
 	<distributionManagement>
       <repository>
+<<<<<<< HEAD
       <id>nexus</id>
       <name>Nexus Releases</name>
       <url>http://localhost:8081/nexus/service/local/staging/deploy/maven2</url>
@@ -54,6 +55,18 @@
       <name>Nexus Sites</name>
       <url>dav:http://localhost:8081/nexus/content/sites/site/</url>
     </site>
+=======
+         <id>nexus</id>
+         <name>Production repository</name>
+         <url>http://master:8081/nexus/content/repositories/releases</url>
+      </repository>
+      <!-- use the following if you ARE using a snapshot version. -->
+      <snapshotRepository>
+         <id>nexus</id>
+         <name>Development repository</name>
+         <url>http://master:8081/nexus/content/repositories/snapshots/</url>
+      </snapshotRepository>
+>>>>>>> branch 'master' of https://github.com/Yorso/jenkins2.git
    </distributionManagement>
 
 	<dependencies>
