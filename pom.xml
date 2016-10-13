@@ -43,12 +43,12 @@
     <repository>
       <id>nexus</id>
       <name>Nexus Releases</name>
-      <url>http://localhost:8081/nexus/content/repositories/releases</url>
+      <url>scp://master:8081/nexus/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
       <id>nexus</id>
       <name>Nexus Snapshot</name>
-      <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+      <url>scp://master:8081/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
     <!--site>
       <id>nexus</id>
