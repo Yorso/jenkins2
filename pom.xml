@@ -40,11 +40,11 @@
   </scm>
 
 	<distributionManagement>
-    <releaseRepository>
+    <repository>
       <id>nexus</id>
       <name>Nexus Releases</name>
       <url>http://master:8081/nexus/content/repositories/releases</url>
-    </releaseRepository>
+    </repository>
     <snapshotRepository>
       <id>nexus</id>
       <name>Nexus Snapshot</name>
