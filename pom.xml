@@ -50,11 +50,11 @@
       <name>Nexus Snapshot</name>
       <url>http://master:8081/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
-    <site>
+    <!--site>
       <id>nexus-site</id>
       <name>Nexus Site</name>
       <url>dav:http://master:8081/nexus/content/repositories/site/</url>
-    </site>
+    </site-->
   </distributionManagement>
 
 	<dependencies>
