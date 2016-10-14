@@ -51,8 +51,8 @@
       <url>http://master:8081/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
     <site>
-      <id>nexus</id>
-      <name>Nexus Sites</name>
+      <id>nexus-site</id>
+      <name>Nexus Site</name>
       <url>dav:http://master:8081/nexus/content/sites/site/</url>
     </site>
   </distributionManagement>
