@@ -43,17 +43,17 @@
     <repository>
       <id>nexus</id>
       <name>Nexus Releases</name>
-      <url>http://localhost:8081/nexus/content/repositories/releases</url>
+      <url>http://master:8081/nexus/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
       <id>nexus</id>
       <name>Nexus Snapshot</name>
-      <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+      <url>http://master:8081/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
     <site>
       <id>nexus</id>
       <name>Nexus Sites</name>
-      <url>dav:http://localhost:8081/nexus/content/sites/site/</url>
+      <url>dav:http://master:8081/nexus/content/sites/site/</url>
     </site>
   </distributionManagement>
 
@@ -174,7 +174,7 @@
 
 	<build>
 		<plugins>
-			<plugin>
+			<!--plugin>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.4</version>
         <dependencies>
@@ -187,7 +187,7 @@
         <configuration>
           <locales>en,es</locales>
         </configuration>
-      </plugin>
+      </plugin-->
 		            
             
 			<plugin>
