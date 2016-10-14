@@ -53,7 +53,7 @@
     <site>
       <id>nexus</id>
       <name>Nexus Sites</name>
-      <url>dav:http://master:8081/nexus/content/sites/site/</url>
+      <url>dav:http://master:8081/nexus/content/sites/site</url>
     </site>
   </distributionManagement>
 
