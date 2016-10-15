@@ -51,22 +51,14 @@ def data = [
 // Inserting data in collection
 coll.insert(data)
 
-assert 1 == coll.count(name: 'Homer')
-
 // Displaying data collection
 coll.find().toArray().each {
     println it
 }
 
-coll.remove(age: '32')
-assert 0 == coll.count(age: '32')
-
-// Displaying data collection
-coll.find().toArray().each {
-    println it
-}
-
+//===================
 // Another example
+//===================
 
 // Instantiate a com.gmongo.GMongo object instead of com.mongodb.Mongo
 // The same constructors and methods are available here
