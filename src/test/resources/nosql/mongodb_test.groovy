@@ -51,15 +51,15 @@ def data = [
 // Inserting data in collection
 coll.insert(data)
 
-assert 1 == db.coll.count(name: 'Homer')
+assert 1 == coll.count(name: 'Homer')
 
 // Displaying data collection
 coll.find().toArray().each {
     println it
 }
 
-db.coll.remove(age: '32')
-assert 0 == db.coll.count(age: '32')
+coll.remove(age: '32')
+assert 0 == coll.count(age: '32')
 
 // Displaying data collection
 coll.find().toArray().each {
