@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
-	<version>1.8.9-SNAPSHOT</version>
+	<version>1.8.14-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
@@ -36,10 +36,10 @@
 	    <connection>scm:git:https://github.com/Yorso/jenkins2.git</connection>
 	    <developerConnection>scm:git:https://github.com/Yorso/jenkins2.git</developerConnection>
 	    <url>http://github.com/Yorso/jenkins2</url>
-	  <tag>jenkins2-1.8.8</tag>
+	  <tag>jenkins2-1.8.13</tag>
   </scm>
 
-	<distributionManagement>
+	<!--distributionManagement>
     <repository>
       <id>nexus</id>
       <name>Nexus Releases</name>
@@ -49,13 +49,13 @@
       <id>nexus</id>
       <name>Nexus Snapshot</name>
       <url>http://master:8081/nexus/content/repositories/snapshots</url>
-    </snapshotRepository>
+    </snapshotRepository-->
     <!--site>
       <id>nexus-site</id>
       <name>Nexus Site</name>
       <url>dav:http://master:8081/nexus/content/repositories/site/</url>
     </site-->
-  </distributionManagement>
+  <!-- /distributionManagement -->
 
 	<dependencies>
 		<!-- Servlet API -->
