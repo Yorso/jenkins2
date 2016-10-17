@@ -44,7 +44,7 @@ public class UserDAO {
 	 * 
 	 */
 	public void add(User user) {
-		String sql = "insert into user (first_name, age) values (?, ?)";
+		//String sql = "insert into user (first_name, age) values (?, ?)";
 		//jdbcTemplate.update(sql, user.getFirstName(), user.getAge());
 	}
 	
@@ -57,7 +57,7 @@ public class UserDAO {
      *
 	 */
 	public User findById(Long id) {
-		String sql = "select * from user where id=?";
+		//String sql = "select * from user where id=?";
 		//User user = jdbcTemplate.queryForObject(sql, new Object[]{id}, new UserMapper());
 		//return user;
 		return null;
@@ -94,7 +94,7 @@ public class UserDAO {
 	*/
 	// TODO: test this method
 	public List<User> findAll() {
-		String sql = "select * from user";
+		//String sql = "select * from user";
 		//List<User> userList = jdbcTemplate.query(sql, new UserMapper());
 		//return userList;
 		return null;
@@ -112,7 +112,7 @@ public class UserDAO {
 	 * 
 	 */
 	public List<User> findAllObjects() {
-		String sql = "select u.id, u.first_name, u.age, p.id as p_id, p.title as p_title, p.date as p_date from user u left join post p on p.user_id = u.id	order by u.id asc, p.date desc";
+		//String sql = "select u.id, u.first_name, u.age, p.id as p_id, p.title as p_title, p.date as p_date from user u left join post p on p.user_id = u.id	order by u.id asc, p.date desc";
 		//return jdbcTemplate.query(sql, new UserWithPosts());
 		return null;
 	}
@@ -126,18 +126,18 @@ public class UserDAO {
 	 * 
 	 */
 	public void update(User user) {
-		String sql = "update user set first_name=?, age=? where id=?";
+		//String sql = "update user set first_name=?, age=? where id=?";
 		//jdbcTemplate.update(sql, user.getFirstName(), user.getAge(), user.getId());
 	}
 	
 	// It's convenient to also have a save() method that will create the database row if it doesn't exist:
 	public void save(User user) {
-		if (user.getId() == null) {
+		/*if (user.getId() == null) {
 			add(user);
 		}
 		else {
 			update(user);
-		}
+		}*/
 	}
 	
 	/**
@@ -149,7 +149,7 @@ public class UserDAO {
 	 * 
 	 */
 	public void delete(User user) {
-		String sql = "delete from user where id=?";
+		//String sql = "delete from user where id=?";
 		//jdbcTemplate.update(sql, user.getId());
 	}
 	
@@ -164,7 +164,7 @@ public class UserDAO {
      * 
 	 */
 	public long countMinorUsers() {
-		String sql = "select count(*) from age < 18";
+		//String sql = "select count(*) from age < 18";
 		//return jdbcTemplate.queryForObject(sql, Long.class);
 		return 0;
 	}
@@ -178,12 +178,12 @@ public class UserDAO {
 	 * 
 	 */
 	public void add(List<User> userList) {
-		String sql = "insert into user (first_name, age) values (?, ?)";
+		/*String sql = "insert into user (first_name, age) values (?, ?)";
 		List<Object[]> userRows = new ArrayList<Object[]>();
 		
 		for (User user : userList) {
 			userRows.add(new Object[] {user.getFirstName(), user.getAge()});
-		}
+		}*/
 		
 		//jdbcTemplate.batchUpdate(sql, userRows);
 	}
@@ -203,9 +203,9 @@ public class UserDAO {
 	private class UserMapper implements RowMapper<User> {
 		public User mapRow(ResultSet row, int rowNum) throws SQLException {
 			User user = new User();
-			user.setId(row.getLong("id"));
+			/*user.setId(row.getLong("id"));
 			user.setFirstName(row.getString("first_name"));
-			user.setAge(row.getInt("age"));
+			user.setAge(row.getInt("age"));*/
 			return user;
 		}
 	}
@@ -220,7 +220,7 @@ public class UserDAO {
 			Map<Long, User> userMap = new ConcurrentHashMap<Long, User>();
 			User u = null;
 			
-			while (rs.next()) {
+			/*while (rs.next()) {
 				// user already in map?
 				Long id = rs.getLong("id");
 				u = userMap.get(id);
@@ -243,7 +243,7 @@ public class UserDAO {
 					p.setUser(u);
 					u.getPosts().add(p);
 				}
-			}
+			}*/
 		
 			return new LinkedList<User>(userMap.values());
 		}
