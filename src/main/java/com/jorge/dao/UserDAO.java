@@ -25,7 +25,7 @@ import com.jorge.model.User;
 			   // error (a runtime exception), any modification made by the DAO method to the database will be rolled back.
 public class UserDAO {
 	
-	//@Autowired // Dependency injection
+	@Autowired // Dependency injection
 	private JdbcTemplate jdbcTemplate; // This field will be initialized automatically by Spring via dependency injection with
 									   // the JdbcTemplate bean defined previously in AppConfig.java
 
@@ -67,10 +67,12 @@ public class UserDAO {
 	 * custom RowMapper interface, just use a ParameterizedBeanPropertyRowMapper class
 	 * 
 	 */
+	/*
 	public User findById(Long id) {String sql = "select * from user where id=?";
 		User user = jdbcTemplate.queryForObject(sql, new Object[]{id}, ParameterizedBeanPropertyRowMapper.newInstance(User.class));
 		return user;
 	}
+	*/
 	
 	/**
 	 * Retrieve database rows and create a list of objects from them.
@@ -82,12 +84,13 @@ public class UserDAO {
 	 * Perform an SQL select query and generate a list of objects from the result using RowMapper
 	 * 
 	 */
+	/*
 	public List<User> findAll() {
 		String sql = "select * from user";
 		List<User> userList = jdbcTemplate.query(sql, ParameterizedBeanPropertyRowMapper.newInstance(User.class));
 		return userList;
 	}
-
+	*/
 	// TODO: test this method
 	public List<User> findAll() {
 		String sql = "select * from user";
