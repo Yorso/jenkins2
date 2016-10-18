@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
-	<version>3.0.4-SNAPSHOT</version>
+	<version>3.0.4</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
@@ -53,10 +53,10 @@
 	      <url>http://master:8081/nexus/content/repositories/releases</url>
 	    </repository>
 		
-	    <snapshotRepository>
+	    <!-- snapshotRepository>
 	      <id>nexus-snapshots</id>
 	      <url>http://master:8081/nexus/content/repositories/snapshots</url>
-	   </snapshotRepository>
+	   </snapshotRepository -->
 		
 	    <!-- snapshotRepository>
 	      <uniqueVersion>true</uniqueVersion>
@@ -247,14 +247,14 @@
 				</configuration>
 			</plugin -->
 			
-			<plugin>
+			<!-- plugin>
 			   <groupId>org.apache.maven.plugins</groupId>
 			   <artifactId>maven-deploy-plugin</artifactId>
 			   <version>2.8.1</version>
 			   <configuration>
 			      <skip>true</skip>
 			   </configuration>
-			</plugin>
+			</plugin -->
 			
 			<plugin>
 			   <groupId>org.apache.maven.plugins</groupId>
