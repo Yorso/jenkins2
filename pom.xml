@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
-	<version>2.0.1-SNAPSHOT</version>
+	<version>2.0.8-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
@@ -36,7 +36,7 @@
 	    <connection>scm:git:https://github.com/Yorso/jenkins2.git</connection>
 	    <developerConnection>scm:git:https://github.com/Yorso/jenkins2.git</developerConnection>
 	    <url>http://github.com/Yorso/jenkins2</url>
-	  <tag>jenkins2-2.0.0</tag>
+	    <tag>jenkins2-2.0.7</tag>
   	</scm>
 	
 	<distributionManagement>
@@ -44,9 +44,9 @@
 	      <uniqueVersion>false</uniqueVersion>
 	      <id>nexus</id>
 	      <name>Corporate Repository</name>
-	      <url>http://master:8081/nexus/content/repositories/releases</url>
+	      <url>http://master:8081/nexus/content/repositories/releases</url -->
 	      <!-- layout>default</layout -->
-	    </repository -->
+	    <!-- /repository -->
 		
 	    <snapshotRepository>
 	      <id>nexus-snapshots</id>
@@ -57,9 +57,9 @@
 	      <uniqueVersion>true</uniqueVersion>
 	      <id>nexus</id>
 	      <name>Propellors Snapshots</name>
-	      <url>http://master:8081/nexus/content/repositories/snapshots</url>
+	      <url>http://master:8081/nexus/content/repositories/snapshots</url -->
 	      <!-- layout>legacy</layout -->
-	    </snapshotRepository -->
+	    <!-- /snapshotRepository -->
 	</distributionManagement>
 
 	<!--distributionManagement>
