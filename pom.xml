@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
-	<version>6.0.35</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
