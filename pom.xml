@@ -48,7 +48,7 @@
 	      <url>http://master:8081/nexus/content/repositories/releases</url>
 	    </repository>
 	    <snapshotRepository>
-	      <id>nexus</id>
+	      <id>nexus-snapshots</id>
 	      <name>Nexus Snapshot</name>
 	      <url>http://master:8081/nexus/content/repositories/snapshots</url>
 	    </snapshotRepository>
