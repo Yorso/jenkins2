@@ -48,6 +48,11 @@
 	      <!-- layout>default</layout -->
 	    <!-- /repository -->
 		
+	    <repository>
+	      <id>nexus-releases</id>
+	      <url>http://master:8081/nexus/content/repositories/releases</url>
+	    </repository>
+		
 	    <snapshotRepository>
 	      <id>nexus-snapshots</id>
 	      <url>http://master:8081/nexus/content/repositories/snapshots</url>
@@ -194,7 +199,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			
@@ -222,7 +227,7 @@
 			   </configuration>
 			</plugin>
 			
-			<!-- plugin>
+			<plugin>
 			   <groupId>org.apache.maven.plugins</groupId>
 			   <artifactId>maven-release-plugin</artifactId>
 			   <version>2.4.2</version>
@@ -231,9 +236,9 @@
 			      <autoVersionSubmodules>true</autoVersionSubmodules>
 			      <releaseProfiles>releases</releaseProfiles>
 			   </configuration>
-			</plugin -->
+			</plugin>
 			
-			<plugin>
+			<!-- plugin>
 			   <groupId>org.sonatype.plugins</groupId>
 			   <artifactId>nexus-staging-maven-plugin</artifactId>
 			   <version>1.5.1</version>
@@ -251,7 +256,7 @@
 			      <nexusUrl>http://master:8081/nexus/</nexusUrl>
 			      <skipStaging>true</skipStaging>
 			   </configuration>
-			</plugin>
+			</plugin -->
 			
 			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
