@@ -29,6 +29,7 @@
 		<groovy.version>2.4.1</groovy.version>
 		<gmongo.version>1.3</gmongo.version>
 		<maven.compiler.plugin.version>3.0</maven.compiler.plugin.version>
+		<nexus.url>http://master:8081/nexus/content</nexus.url>
 	</properties>
 	
 	<!-- Configuración del repositorio -->
@@ -40,15 +41,37 @@
   	</scm>
 	
 	
-	<distributionManagement>
-	  <snapshotRepository>
-	    <id>ossrh</id>
-	    <url>http://master:8081/nexus/content/repositories/snapshots/</url>
-	  </snapshotRepository>
+	<repositories>
 	  <repository>
-	    <id>ossrh</id>
-	    <url>http://master:8081/nexus/content/repositories/releases/</url>
+	    <id>nexus</id>
+	    <url>${nexus.url}/groups/public</url>
+	    <snapshots>
+	      <enabled>true</enabled>
+	      <updatePolicy>always</updatePolicy>
+	    </snapshots>
 	  </repository>
+	</repositories>
+
+	<pluginRepositories>
+	  <pluginRepository>
+	    <id>nexus</id>
+	    <url>${nexus.url}/groups/public</url>
+	  </pluginRepository>
+	</pluginRepositories>
+
+	<distributionManagement>
+	  <repository>
+	    <uniqueVersion>false</uniqueVersion>
+	    <id>nexus</id>
+	    <name>Releases</name>
+	    <url>${nexus.url}/repositories/releases</url>
+	  </repository>
+	  <snapshotRepository>
+	    <uniqueVersion>false</uniqueVersion>
+	    <id>nexus</id>
+	    <name>Snapshots</name>
+	    <url>${nexus.url}/repositories/snapshots</url>
+	  </snapshotRepository>
 	</distributionManagement>
 
 	<dependencies>
@@ -175,18 +198,6 @@
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
-			</plugin>
-			
-			<plugin>
-			  <groupId>org.sonatype.plugins</groupId>
-			  <artifactId>nexus-staging-maven-plugin</artifactId>
-			  <version>1.6.7</version>
-			  <extensions>true</extensions>
-			  <configuration>
-			     <serverId>ossrh</serverId>
-			     <nexusUrl>http://master:8081/nexus</nexusUrl>
-			     <autoReleaseAfterClose>true</autoReleaseAfterClose>
-			  </configuration>
 			</plugin>
 			
 		</plugins>
