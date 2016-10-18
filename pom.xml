@@ -4,7 +4,6 @@
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
 	<version>3.0.22-SNAPSHOT</version>
-	<version>3.0.21</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
