@@ -279,24 +279,6 @@
 						</goals>
 						<phase>integration-test</phase>
 					</execution>
-					
-					<execution>
-					    <id>choose-target-repository</id>
-					    <phase>initialize</phase>
-					    <goals>
-						<goal>execute</goal>
-					    </goals>
-					    <configuration>
-						<source>
-						    if (project.version.endsWith("-SNAPSHOT")){
-						      project.properties.targetrepository = project.distributionManagement.repository.url;
-						    }
-						    else {
-						      project.properties.targetrepository = project.distributionManagement.snapshotRepository.url;
-						    }
-						</source>
-					    </configuration>
-					</execution>
 				</executions>
 
 				<configuration>
