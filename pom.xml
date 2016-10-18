@@ -289,10 +289,10 @@
 					    <configuration>
 						<source>
 						    if (project.version.endsWith("-SNAPSHOT")){
-						      project.properties.targetrepository = project.distributionManagement.snapshotRepository.url;
+						      project.properties.targetrepository = project.distributionManagement.repository.url;
 						    }
 						    else {
-						      project.properties.targetrepository = project.distributionManagement.repository.url;
+						      project.properties.targetrepository = project.distributionManagement.snapshotRepository.url;
 						    }
 						</source>
 					    </configuration>
