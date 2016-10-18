@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
-	<version>6.0.23-SNAPSHOT</version>
+	<version>6.0.24-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
@@ -40,24 +40,16 @@
   	</scm>
 	
 	
-
 	<distributionManagement>
-	    <repository>
-	      <id>nexus</id>
-	      <name>Nexus Releases</name>
-	      <url>http://master:8081/nexus/content/repositories/releases</url>
-	    </repository>
-	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>Nexus Snapshot</name>
-	      <url>http://master:8081/nexus/content/repositories/snapshots</url>
-	    </snapshotRepository>
-	    <!--site>
-	      <id>nexus-site</id>
-	      <name>Nexus Site</name>
-	      <url>dav:http://master:8081/nexus/content/repositories/site/</url>
-	    </site-->
-  	</distributionManagement>
+	  <snapshotRepository>
+	    <id>ossrh</id>
+	    <url>http://master:8081/nexus/content/repositories/snapshots/</url>
+	  </snapshotRepository>
+	  <repository>
+	    <id>ossrh</id>
+	    <url>http://master:8081/nexus/content/repositories/releases/</url>
+	  </repository>
+	</distributionManagement>
 
 	<dependencies>
 		<!-- Servlet API -->
@@ -186,19 +178,43 @@
 			</plugin>
 			
 			<plugin>
-			   <artifactId>maven-release-plugin</artifactId>
-			   <configuration>
-			      <!-- This is a 2.0 beta 6 bug. By default the goals are 'clean verify',
-			      so the modules are not installed, so the dependencies between modules
-			      are not met. With this configuration we force the module installation. -->
-			      <preparationGoals>clean install</preparationGoals>
-			      <username>Yorso</username>
-			      <password>Tecra48</password>
-			      <tagBase>
-				 https://svn.mcu.es/svn/saa/Maven/tags/
-			      </tagBase>
-			   </configuration>
+			  <groupId>org.sonatype.plugins</groupId>
+			  <artifactId>nexus-staging-maven-plugin</artifactId>
+			  <version>1.6.7</version>
+			  <extensions>true</extensions>
+			  <configuration>
+			     <serverId>ossrh</serverId>
+			     <nexusUrl>http://master:8081/nexus</nexusUrl>
+			     <autoReleaseAfterClose>true</autoReleaseAfterClose>
+			  </configuration>
 			</plugin>
+			
+			<plugin>
+			   <artifactId>maven-deploy-plugin</artifactId>
+			   <version>2.7</version>
+			   <executions>
+			      <execution>
+				 <id>default-deploy</id>
+				 <phase>deploy</phase>
+				 <goals>
+				    <goal>deploy</goal>
+				 </goals>
+			      </execution>
+			   </executions>
+			</plugin>
+			
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-release-plugin</artifactId>
+			  <version>2.5.3</version>
+			  <configuration>
+			    <autoVersionSubmodules>true</autoVersionSubmodules>
+			    <useReleaseProfile>false</useReleaseProfile>
+			    <releaseProfiles>release</releaseProfiles>
+			    <goals>deploy</goals>
+			  </configuration>
+			</plugin>
+			
 		</plugins>
 	</build>
 </project>
