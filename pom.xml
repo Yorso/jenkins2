@@ -49,7 +49,7 @@
 	    <!-- /repository -->
 		
 	    <repository>
-	      <id>releases</id>
+	      <id>nexus</id>
 	      <url>http://master:8081/nexus/content/repositories/releases</url>
 	    </repository>
 		
@@ -200,7 +200,7 @@
 		</dependency>
 	</dependencies>
 	
-	<profiles>
+	<!-- profiles>
 	    <profile>
 	      <id>releases</id>
 	      <build>
@@ -227,7 +227,7 @@
 		 </plugins>
 	      </build>
 	    </profile>
-	</profiles>
+	</profiles -->
 	
 	<build>
 		<plugins>
@@ -263,7 +263,6 @@
 			   <configuration>
 			      <tagNameFormat>v@{project.version}</tagNameFormat>
 			      <autoVersionSubmodules>true</autoVersionSubmodules>
-			      <releaseProfiles>releases</releaseProfiles>
 			   </configuration>
 			</plugin>
 			
