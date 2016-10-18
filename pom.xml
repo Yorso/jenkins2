@@ -49,7 +49,7 @@
 	    <!-- /repository -->
 		
 	    <repository>
-	      <id>nexus-releases</id>
+	      <id>releases</id>
 	      <url>http://master:8081/nexus/content/repositories/releases</url>
 	    </repository>
 		
@@ -219,7 +219,7 @@
 			  </execution>
 		       </executions>
 		       <configuration>
-			  <serverId>nexus-releases</serverId>
+			  <serverId>nexus</serverId>
 			  <nexusUrl>http://master:8081/nexus/</nexusUrl>
 			  <skipStaging>true</skipStaging>
 		       </configuration>
