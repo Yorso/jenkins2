@@ -4,7 +4,7 @@
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
 	<packaging>war</packaging>
-	<version>6.0.76-SNAPSHOT</version>
+	<version>6.0.77-SNAPSHOT</version>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
 
@@ -65,7 +65,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -73,28 +73,28 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 		</dependency>
 
 		<!-- Spring MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 		</dependency>
 
 		<!-- JSTL -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 		</dependency>
 
 		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -103,7 +103,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -111,7 +111,7 @@
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -119,28 +119,28 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 		</dependency>
 
 		<!-- MySQL DataBase Connector -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 		</dependency>
 
 		<!-- MongoDB -->
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 		</dependency>
 
 		<!-- Jetty -->
 		<dependency>
 			<groupId>org.mortbay.jetty</groupId>
 			<artifactId>jetty</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -148,7 +148,7 @@
 		<dependency>
 			<groupId>com.gmongo</groupId>
 			<artifactId>gmongo</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -156,20 +156,20 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-ant</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<!-- scope>compile</scope -->
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-test</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy</artifactId>
-			<version>6.0.76-SNAPSHOT</version>
+			<version>6.0.77-SNAPSHOT</version>
 			<!-- scope>compile</scope -->
 			<scope>test</scope>
 		</dependency>
@@ -180,7 +180,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>6.0.76-SNAPSHOT</version>
+				<version>6.0.77-SNAPSHOT</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
@@ -190,13 +190,13 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>sql-maven-plugin</artifactId>
-				<version>6.0.76-SNAPSHOT</version>
+				<version>6.0.77-SNAPSHOT</version>
 
 				<dependencies>
 					<dependency>
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
-						<version>6.0.76-SNAPSHOT</version>
+						<version>6.0.77-SNAPSHOT</version>
 					</dependency>
 				</dependencies>
 
@@ -274,7 +274,7 @@
 			<plugin>
 				<groupId>org.codehaus.gmaven</groupId>
 				<artifactId>gmaven-plugin</artifactId>
-				<version>6.0.76-SNAPSHOT</version>
+				<version>6.0.77-SNAPSHOT</version>
 
 				<executions>
 					<execution>
