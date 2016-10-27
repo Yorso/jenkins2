@@ -1,13 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.jorge</groupId>
-	<artifactId>jenkins2</artifactId>
-	<packaging>war</packaging>
-	<version>7.0.49-SNAPSHOT</version>
-	<name>jenkins2</name>
-	<description>Jenkins testing</description>
-
 	<properties>
 		<java.version>1.8</java.version>
 		<spring.version>4.3.0.RELEASE</spring.version>
@@ -288,4 +280,12 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jorge</groupId>
+	<artifactId>jenkins2</artifactId>
+	<packaging>war</packaging>
+	<version>7.0.49-SNAPSHOT</version>
+	<name>jenkins2</name>
+	<description>Jenkins testing</description>
 </project>
