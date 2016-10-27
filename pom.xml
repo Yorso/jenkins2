@@ -68,7 +68,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>7.0.35-SNAPSHOT</version>
+			<version>${spring.version}</version>
 		</dependency>
 
 		<!-- Spring MVC -->
