@@ -4,7 +4,7 @@
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
 	<packaging>war</packaging>
-	<version>10.1.1-SNAPSHOT</version>
+	<version>11.0.0</version>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
 
