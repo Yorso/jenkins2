@@ -18,7 +18,7 @@ public class SeleniumTest {
 		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		//WebDriver driver = new ChromeDriver();
 		//For Firefox
-		//System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
 		//WebDriver driver = new FirefoxDriver();
 		
 		
@@ -45,7 +45,7 @@ public class SeleniumTest {
 		*/
 		//WebDriver driver = new ChromeDriver();
 		
-		FirefoxDriverManager.getInstance().setup();
+		//FirefoxDriverManager.getInstance().setup();
 		WebDriver driver = new FirefoxDriver();
 		
 		
