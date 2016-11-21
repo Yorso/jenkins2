@@ -54,7 +54,7 @@ public class SeleniumTest {
 		//Checking if title contains "Selenium" string
 		Assert.assertTrue(driver.getTitle().contains("Selenium"));
 		
-		
+		driver.close();
 		//Close browser
 		driver.quit();
 		
