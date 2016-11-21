@@ -1,11 +1,15 @@
 package com.jorge.testng;
 
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
 
 //USING TESTNG
 public class SeleniumTest {
@@ -18,7 +22,7 @@ public class SeleniumTest {
 		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		//WebDriver driver = new ChromeDriver();
 		//For Firefox
-		System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
+		//System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
 		//WebDriver driver = new FirefoxDriver();
 		
 		
@@ -46,8 +50,27 @@ public class SeleniumTest {
 		//WebDriver driver = new ChromeDriver();
 		
 		//FirefoxDriverManager.getInstance().setup();
-		WebDriver driver = new FirefoxDriver();
+		//WebDriver driver = new FirefoxDriver();
 		
+		
+		
+		
+		File pathToLinuxGecko = new File("/opt/tomcat8/selenium/geckodriver");
+	    System.setProperty("webdriver.gecko.driver",pathToLinuxGecko.getPath());
+
+
+
+	    DesiredCapabilities capabilities= DesiredCapabilities.firefox();
+	    capabilities.setCapability("marionette", true);
+
+	    WebDriver driver;
+	    driver = new FirefoxDriver(capabilities);
+
+	    driver.manage().window().maximize();
+
+	    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	    
+	    
 		
 		//Common for both ways
 		driver.get("http://www.learn-automation.com");
