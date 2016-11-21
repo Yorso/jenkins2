@@ -1,13 +1,7 @@
 package com.jorge.testng;
 
-import java.io.File;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -55,22 +49,10 @@ public class SeleniumTest {
 		
 		
 		
-		File pathToLinuxGecko = new File("/opt/tomcat8/selenium/geckodriver");
-	    System.setProperty("webdriver.gecko.driver",pathToLinuxGecko.getPath());
-
-
-
-	    DesiredCapabilities capabilities= DesiredCapabilities.firefox();
-	    capabilities.setCapability("marionette", true);
-
-	    WebDriver driver;
-	    driver = new FirefoxDriver(capabilities);
-
-	    driver.manage().window().maximize();
-
-	    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		 
 	    
-	    
+		System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
+		WebDriver driver = new ChromeDriver();
 		
 		//Common for both ways
 		driver.get("http://www.learn-automation.com");
