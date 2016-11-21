@@ -92,9 +92,24 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- TestNG Maven dependency -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- Selenium -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>3.0.1</version>
+		</dependency>
+				
 
-		<!-- spring-test Maven dependency for testing a method using the Spring's 
-			application context with JUnit 4 -->
+		<!-- spring-test Maven dependency for testing a method using the Spring's application context with JUnit 4 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
