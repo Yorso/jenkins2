@@ -15,7 +15,7 @@ public class SeleniumTest {
 		//Using driver files for each browser, downloaded in system file:
 		//---------------------------------------------------------------
 		//For Chrome
-		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		//WebDriver driver = new ChromeDriver();
 		//For Firefox
 		//System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
@@ -35,7 +35,7 @@ public class SeleniumTest {
 			</dependency>
 		 */
 		//And then this:
-		ChromeDriverManager.getInstance().setup();
+		//ChromeDriverManager.getInstance().setup();
 		/*
 		FirefoxDriverManager.getInstance().setup();
 		InternetExplorerDriverManager.getInstance().setup();
