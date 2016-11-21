@@ -44,15 +44,15 @@
 	
 	<distributionManagement>
 	    <repository>
-		<id>releases</id>
-		<name>Releases</name>
-		<url>http://master:8081/nexus/content/repositories/releases</url>
+			<id>releases</id>
+			<name>Releases</name>
+			<url>http://master:8081/nexus/content/repositories/releases</url>
 	    </repository>
 
 	    <snapshotRepository>
-		<id>snapshots</id>
-		<name>Snapshots</name>
-		<url>http://master:8081/nexus/content/repositories/snapshots</url>
+			<id>snapshots</id>
+			<name>Snapshots</name>
+			<url>http://master:8081/nexus/content/repositories/snapshots</url>
 	    </snapshotRepository>
 	</distributionManagement>
 
@@ -107,11 +107,13 @@
 		    <groupId>org.seleniumhq.selenium</groupId>
 		    <artifactId>selenium-java</artifactId>
 		    <version>3.0.1</version>
+		    <scope>test</scope>
 		</dependency> 
 		<dependency>
 		   <groupId>io.github.bonigarcia</groupId>
 		   <artifactId>webdrivermanager</artifactId>
 		   <version>1.5.0</version>
+		   <scope>test</scope>
 		</dependency>
 				
 		<!-- spring-test Maven dependency for testing a method using the Spring's application context with JUnit 4 -->
@@ -202,6 +204,7 @@
                   <target>1.8</target>
               </configuration>
 			</plugin>
+			
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-surefire-plugin</artifactId>
