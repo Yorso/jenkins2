@@ -1,11 +1,11 @@
 package com.jorge.testng;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
 
 //USING TESTNG
 public class SeleniumTest {
@@ -15,7 +15,7 @@ public class SeleniumTest {
 		//Using driver files for each browser, downloaded in system file:
 		//---------------------------------------------------------------
 		//For Chrome
-		System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		//WebDriver driver = new ChromeDriver();
 		//For Firefox
 		//System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
@@ -43,7 +43,10 @@ public class SeleniumTest {
 		EdgeDriverManager.getInstance().setup();
 		PhantomJsDriverManager.getInstance().setup();
 		*/
-		WebDriver driver = new ChromeDriver();
+		//WebDriver driver = new ChromeDriver();
+		
+		FirefoxDriverManager.getInstance().setup();
+		WebDriver driver = new FirefoxDriver();
 		
 		
 		//Common for both ways
