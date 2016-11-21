@@ -114,9 +114,6 @@
 		   <version>1.5.0</version>
 		</dependency>
 				
-
-		
-				
 		<!-- spring-test Maven dependency for testing a method using the Spring's application context with JUnit 4 -->
 		<dependency>
 			<groupId>org.springframework</groupId>

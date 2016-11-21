@@ -46,12 +46,14 @@ public class SeleniumTest {
 		WebDriver driver = new ChromeDriver();
 		
 		
-		
-		
 		//Common for both ways
 		driver.get("http://www.learn-automation.com");
-		
+		//Checking if title contains "Selenium" string
 		Assert.assertTrue(driver.getTitle().contains("Selenium"));
+		
+		
+		//Close browser
+		driver.quit();
 		
 		//Run project as Maven Test
 	}
