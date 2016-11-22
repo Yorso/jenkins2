@@ -1,11 +1,11 @@
 package com.jorge.testng;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 //USING TESTNG
 public class SeleniumTest {
@@ -47,15 +47,19 @@ public class SeleniumTest {
 		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		//WebDriver driver = new ChromeDriver();
 		//System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
-		FirefoxDriverManager.getInstance().setup();
-		WebDriver driver = new FirefoxDriver();
+		
+		//Must be a browser installed on Master machine
+		//FirefoxDriverManager.getInstance().setup();
+		//WebDriver driver = new FirefoxDriver();
+		ChromeDriverManager.getInstance().setup();
+		WebDriver driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
 		
 		//Common for both ways
 		driver.get("http://www.meneame.net");
 		//Checking if title contains "Selenium" string
-		Assert.assertTrue(driver.getTitle().contains("Menéafffme"));
+		Assert.assertTrue(driver.getTitle().contains("Menéame"));
 		
 		//Close browser
 		//driver.close();
