@@ -5,6 +5,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
+
 //USING TESTNG
 public class SeleniumTest {
 
@@ -44,13 +46,16 @@ public class SeleniumTest {
 	    
 		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		//WebDriver driver = new ChromeDriver();
-		System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
+		//System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
+		FirefoxDriverManager.getInstance().setup();
 		WebDriver driver = new FirefoxDriver();
+		
+		driver.manage().window().maximize();
 		
 		//Common for both ways
 		driver.get("http://www.meneame.net");
 		//Checking if title contains "Selenium" string
-		//Assert.assertTrue(driver.getTitle().contains("Menéame"));
+		Assert.assertTrue(driver.getTitle().contains("Menéame"));
 		
 		//Close browser
 		//driver.close();
