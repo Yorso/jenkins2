@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -19,6 +20,8 @@ public class FacebookRegistrationTest {
 		
 		//Maximize window browser
 		driver.manage().window().maximize();
+		
+		Assert.assertTrue(driver.getTitle().contains("Menéame"));
 		
 		//Going to Facebook
 		driver.get("http://www.facebook.com");
