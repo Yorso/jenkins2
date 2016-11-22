@@ -6,9 +6,9 @@
 			<class name="com.jorge.testng.SeleniumTest"/>
 		</classes>
 	</test>
-	<!-- test name="FacebookTest">
+	<test name="FacebookTest">
 		<classes>
 			<class name="com.jorge.testng.FacebookRegistrationTest"/>
 		</classes>
-	</test-->
+	</test>
 </suite>

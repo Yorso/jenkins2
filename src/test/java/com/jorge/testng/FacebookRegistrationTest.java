@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+//import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 public class FacebookRegistrationTest {
 
 	@Test
@@ -49,7 +51,7 @@ public class FacebookRegistrationTest {
 		//driver.navigate().refresh();
 		
 		//Close browser
-		//driver.quit();
+		driver.quit();
 	}
 
 }

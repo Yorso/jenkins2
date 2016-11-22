@@ -1,17 +1,18 @@
 package com.jorge.testng;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.OperaDriverManager;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
 
 //USING TESTNG
 public class SeleniumTest {
 
 	@Test
 	public SeleniumTest() {
+		
 		//Using driver files for each browser, downloaded in system file:
 		//---------------------------------------------------------------
 		//For Chrome
@@ -44,15 +45,9 @@ public class SeleniumTest {
 		PhantomJsDriverManager.getInstance().setup();
 		*/
 	    
-		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
-		//WebDriver driver = new ChromeDriver();
-		//System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
-		
-		//Must be a browser installed on Master machine
-		//FirefoxDriverManager.getInstance().setup();
-		//WebDriver driver = new FirefoxDriver();
-		OperaDriverManager.getInstance().setup();
-		WebDriver driver = new OperaDriver();
+		//IMPORTANT: Must be a browser installed on Master machine
+		FirefoxDriverManager.getInstance().setup();
+		WebDriver driver = new FirefoxDriver();
 		
 		driver.manage().window().maximize();
 		
@@ -63,7 +58,7 @@ public class SeleniumTest {
 		
 		//Close browser
 		//driver.close();
-		//driver.quit();
+		driver.quit();
 		
 		//You must run the project as Maven Test
 	}
