@@ -33,25 +33,16 @@ public class SeleniumTest {
 			</dependency>
 		 */
 		//And then this:
-		//ChromeDriverManager.getInstance().setup();
 		/*
+		ChromeDriverManager.getInstance().setup();
 		FirefoxDriverManager.getInstance().setup();
 		InternetExplorerDriverManager.getInstance().setup();
 		OperaDriverManager.getInstance().setup();
 		EdgeDriverManager.getInstance().setup();
 		PhantomJsDriverManager.getInstance().setup();
 		*/
-		//WebDriver driver = new ChromeDriver();
-		
-		//FirefoxDriverManager.getInstance().setup();
-		//WebDriver driver = new FirefoxDriver();
-		
-		
-		
-		
-		 
 	    
-		System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		
 		//Common for both ways
@@ -59,11 +50,10 @@ public class SeleniumTest {
 		//Checking if title contains "Selenium" string
 		Assert.assertTrue(driver.getTitle().contains("Selenium"));
 		
-		driver.close();
 		//Close browser
 		driver.quit();
 		
-		//Run project as Maven Test
+		//You must run the project as Maven Test
 	}
 
 }
