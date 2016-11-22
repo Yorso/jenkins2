@@ -42,8 +42,9 @@ public class SeleniumTest {
 		PhantomJsDriverManager.getInstance().setup();
 		*/
 	    
-		System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		//WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.gecko.driver", "/opt/tomcat8/selenium/geckodriver");
 		WebDriver driver = new FirefoxDriver();
 		
 		//Common for both ways
