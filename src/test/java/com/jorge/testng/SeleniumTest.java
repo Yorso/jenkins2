@@ -1,7 +1,7 @@
 package com.jorge.testng;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -43,15 +43,16 @@ public class SeleniumTest {
 		*/
 	    
 		System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
-		WebDriver driver = new ChromeDriver();
+		//WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		
 		//Common for both ways
 		driver.get("http://www.meneame.net");
 		//Checking if title contains "Selenium" string
-		Assert.assertTrue(driver.getTitle().contains("Menéame"));
+		//Assert.assertTrue(driver.getTitle().contains("Menéame"));
 		
 		//Close browser
-		driver.close();
+		//driver.close();
 		//driver.quit();
 		
 		//You must run the project as Maven Test
