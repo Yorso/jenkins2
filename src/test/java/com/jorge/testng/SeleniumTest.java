@@ -42,16 +42,17 @@ public class SeleniumTest {
 		PhantomJsDriverManager.getInstance().setup();
 		*/
 	    
-		//System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/opt/tomcat8/selenium/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		
 		//Common for both ways
-		driver.get("http://www.learn-automation.com");
+		driver.get("http://www.meneame.net");
 		//Checking if title contains "Selenium" string
-		Assert.assertTrue(driver.getTitle().contains("Selenium"));
+		Assert.assertTrue(driver.getTitle().contains("Menéame"));
 		
 		//Close browser
-		driver.quit();
+		driver.close();
+		//driver.quit();
 		
 		//You must run the project as Maven Test
 	}
