@@ -55,7 +55,7 @@ public class SeleniumTest {
 		//Common for both ways
 		driver.get("http://www.meneame.net");
 		//Checking if title contains "Selenium" string
-		Assert.assertTrue(driver.getTitle().contains("Menéame"));
+		Assert.assertTrue(driver.getTitle().contains("Menéafffme"));
 		
 		//Close browser
 		//driver.close();
