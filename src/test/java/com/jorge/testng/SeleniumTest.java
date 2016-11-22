@@ -1,11 +1,11 @@
 package com.jorge.testng;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 
 //USING TESTNG
 public class SeleniumTest {
@@ -51,8 +51,8 @@ public class SeleniumTest {
 		//Must be a browser installed on Master machine
 		//FirefoxDriverManager.getInstance().setup();
 		//WebDriver driver = new FirefoxDriver();
-		ChromeDriverManager.getInstance().setup();
-		WebDriver driver = new ChromeDriver();
+		InternetExplorerDriverManager.getInstance().setup();
+		WebDriver driver = new InternetExplorerDriver();
 		
 		driver.manage().window().maximize();
 		
