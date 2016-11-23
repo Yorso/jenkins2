@@ -42,7 +42,7 @@
 		
 	</properties>
 	
-	<!-- Configuración del repositorio -->
+	<!-- Repository configuration -->
 	<scm>
 	    <connection>scm:git:https://github.com/Yorso/jenkins2.git</connection>
 	    <developerConnection>scm:git:https://github.com/Yorso/jenkins2.git</developerConnection>
@@ -50,7 +50,7 @@
 	    <tag>HEAD</tag>
   	</scm>
 	
-	
+	<!-- Nexus configuration -->
 	<distributionManagement>
 	    <repository>
 			<id>releases</id>
@@ -203,11 +203,11 @@
 			<!-- scope>compile</scope -->
 			<scope>test</scope>
 		</dependency>
-
+		
 	</dependencies>
 	
 	<build>
-		<!-- Maven properties to get in Java project name and embedded container port -->
+		<!-- Maven properties to get, in Java, project name and embedded container port -->
 		<testResources>
 	        <testResource>
 	            <directory>src/test/resources</directory>
@@ -216,8 +216,7 @@
 	    </testResources>
 
 		<plugins>
-		
-			<!-- Compiler and Surefire seem necessary for Selenium -->
+			<!-- Compiler plugin -->
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-compiler-plugin</artifactId>
@@ -239,7 +238,7 @@
 			    </configuration>
 			</plugin-->
 			
-			<!-- Executing all integration class ending in IT -->
+			<!-- Executing all integration classes ended in IT -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -294,7 +293,7 @@
 	                    <phase>pre-integration-test</phase>
 	                    <goals>
 	                        <goal>start</goal>
-	                        <!-- If uncomment this line, an error occurs when executing integration test if we are using embedded container -->
+	                        <!-- If you uncomment this line, an error occurs when executing integration test if we are using embedded container -->
 	                        <!-- goal>deploy</goal-->
 	                    </goals>
 	                </execution>
@@ -324,7 +323,7 @@
 	            </configuration>
 	        </plugin>
 				
-			<!-- Start the Selenium server -->
+			<!-- Starting Selenium server -->
 	        <plugin>
 	            <groupId>org.codehaus.mojo</groupId>
 	            <artifactId>selenium-maven-plugin</artifactId>
@@ -351,7 +350,7 @@
 	            </executions>
 	        </plugin>
 				
-            <!-- Create war files -->
+            <!-- Creating war files -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
