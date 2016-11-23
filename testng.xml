@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
+<suite name="Suite" parallel="methods">
 	<test name="SeleniumTest">
 		<classes>
-			<class name="com.jorge.testng.SeleniumTest"/>
+			<class name="com.jorge.integration.SeleniumTestIT"/>
 		</classes>
 	</test>
-	<test name="FacebookTest">
+	<!-- test name="FacebookTest">
 		<classes>
 			<class name="com.jorge.testng.FacebookRegistrationTest"/>
 		</classes>
-	</test>
+	</test-->
 </suite>

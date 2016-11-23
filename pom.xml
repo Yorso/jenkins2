@@ -4,33 +4,39 @@
 	<groupId>com.jorge</groupId>
 	<artifactId>jenkins2</artifactId>
 	<packaging>war</packaging>
-	<version>11.0.1-SNAPSHOT</version>
+	<version>11.0.2-SNAPSHOT</version>
 	<name>jenkins2</name>
 	<description>Jenkins testing</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<spring.version>4.3.0.RELEASE</spring.version>
+		<javax.servlet.version>3.1.0</javax.servlet.version>
+		<jstl.version>1.2</jstl.version>
+		<!-- junit.version>4.10</junit.version -->
+		<junit.version>4.12-beta-1</junit.version>
+		<testng.version>6.8</testng.version>
+		<selenium.server.version>3.0.1</selenium.server.version>
+		<selenium.java.client.driver>1.0.1</selenium.java.client.driver>
+		<webdrivermanager.version>1.5.0</webdrivermanager.version>
+		<spring.test.version>4.1.1.RELEASE</spring.test.version>
+		<hamcrest.version>1.3</hamcrest.version>
+		<mysql.version>5.1.35</mysql.version>
+		<mongodb.version>2.13.0</mongodb.version>
+		<groovy.version>2.4.1</groovy.version>
+		<gmongo.version>1.3</gmongo.version>
+		<maven.compiler.version>3.6.0</maven.compiler.version>
+		<maven.surefire.version>2.19.1</maven.surefire.version>
+		<maven.war.version>2.6</maven.war.version>
+		<sql.maven.version>1.5</sql.maven.version>
+		<cargo.port>8097</cargo.port>
 		<db.user>user1</db.user>
 		<db.password>user1pass</db.password>
 		<gmaven.version>1.5</gmaven.version>
-		<maven.war.version>2.6</maven.war.version>
-		<cargo.maven.version>1.4.2</cargo.maven.version>
-		<mysql.version>5.1.35</mysql.version>
-		<mongodb.version>2.13.0</mongodb.version>
-		<javax.servlet.version>3.1.0</javax.servlet.version>
-		<junit.version>4.10</junit.version>
-		<hamcrest.version>1.3</hamcrest.version>
-		<sql.maven.version>1.5</sql.maven.version>
-		<spring.test.version>4.1.1.RELEASE</spring.test.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jetty.version>6.1.25</jetty.version>
-		<jstl.version>1.2</jstl.version>
-		<groovy.version>2.4.1</groovy.version>
-		<gmongo.version>1.3</gmongo.version>
-		<maven.compiler.plugin.version>3.0</maven.compiler.plugin.version>
-		<nexus.url>http://master:8081/nexus/content</nexus.url>
+		
 		<suiteXmlFile>testng.xml</suiteXmlFile>
+		
 	</properties>
 	
 	<!-- Configuración del repositorio -->
@@ -98,27 +104,33 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.8</version>
+			<version>${testng.version}</version>
 			<scope>test</scope>
 		</dependency>
 		
 		<!-- Selenium -->
-		<!-- dependency>
+		<dependency>
 	        <groupId>org.seleniumhq.selenium</groupId>
 	        <artifactId>selenium-server</artifactId>
-	        <version>3.0.1</version>
+	        <version>${selenium.server.version}</version>
 	        <scope>test</scope>
-	    </dependency--> 
-		<dependency>
+	    </dependency>
+	    <dependency>
+		    <groupId>org.seleniumhq.selenium.client-drivers</groupId>
+		    <artifactId>selenium-java-client-driver</artifactId>
+		    <version>${selenium.java.client.driver}</version>
+		    <scope>test</scope>
+		</dependency>
+		<!-- dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
 		    <artifactId>selenium-java</artifactId>
-		    <version>3.0.1</version>
+		    <version>${selenium.server.version}</version>
 		    <scope>test</scope>
-		</dependency> 
+		</dependency--> 
 		<dependency>
 		   <groupId>io.github.bonigarcia</groupId>
 		   <artifactId>webdrivermanager</artifactId>
-		   <version>1.5.0</version>
+		   <version>${webdrivermanager.version}</version>
 		   <scope>test</scope>
 		</dependency>
 				
@@ -159,14 +171,6 @@
 			<version>${mongodb.version}</version>
 		</dependency>
 
-		<!-- Jetty -->
-		<dependency>
-			<groupId>org.mortbay.jetty</groupId>
-			<artifactId>jetty</artifactId>
-			<version>${jetty.version}</version>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- Gmongo -->
 		<dependency>
 			<groupId>com.gmongo</groupId>
@@ -196,22 +200,32 @@
 			<!-- scope>compile</scope -->
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 	
 	<build>
+		<!-- Maven properties to get in Java project name and embedded container port -->
+		<testResources>
+	        <testResource>
+	            <directory>src/test/resources</directory>
+	            <filtering>true</filtering>
+	        </testResource>
+	    </testResources>
+
 		<plugins>
+		
 			<!-- Compiler and Surefire seem necessary for Selenium -->
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-compiler-plugin</artifactId>
-			    <version>3.6.0</version>
+			    <version>${maven.compiler.version}</version>
 			    <configuration>
-                  <source>1.8</source>
-                  <target>1.8</target>
+                  <source>${java.version}</source>
+                  <target>${java.version}</target>
               </configuration>
 			</plugin>
 			
-			<plugin>
+			<!-- plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-surefire-plugin</artifactId>
 			    <version>2.19.1</version>
@@ -220,8 +234,117 @@
 			    		<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 			    	</suiteXmlFiles>
 			    </configuration>
+			</plugin-->
+			
+			<!-- Executing all integration class ending in IT -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
+				<executions>
+					<execution>
+						<id>Running integration tests</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<excludes>
+								<exclude>none</exclude>
+							</excludes>
+							<includes>
+								<!-- Executes integration test, only classes ending in IT of integration package  -->
+								<!-- include>**/integration/*IT.java</include-->
+								<include>**/integration/*.java</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<parallel>methods</parallel>
+	   				<threadCount>4</threadCount>
+				</configuration>
+				<!-- configuration>
+			    	<suiteXmlFiles>
+			    		<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+			    	</suiteXmlFiles>
+			    </configuration-->
+				<!-- configuration>
+					<excludes>
+						<exclude>**/integration/*IT.java</exclude>
+					</excludes>
+				</configuration-->
 			</plugin>
-						
+			
+        
+			<!-- Start Jetty server -->
+	        <plugin>
+	            <groupId>org.codehaus.cargo</groupId>
+	            <artifactId>cargo-maven2-plugin</artifactId>
+	            <executions>
+	                <execution>
+	                    <id>start-container</id>
+	                    <phase>pre-integration-test</phase>
+	                    <goals>
+	                        <goal>start</goal>
+	                        <!-- If uncomment this line, an error occurs when executing integration test if we are using embedded container -->
+	                        <!-- goal>deploy</goal-->
+	                    </goals>
+	                </execution>
+	                <execution>
+	                    <id>stop-container</id>
+	                    <phase>post-integration-test</phase>
+	                    <goals>
+	                        <goal>stop</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	            <configuration>
+	            	<wait>false</wait>
+	            	<configuration>
+		                <properties>
+		                	<!-- Setting container port -->
+							<cargo.servlet.port>${cargo.port}</cargo.servlet.port>
+		                </properties>
+	                </configuration>
+	                <container>
+	                	<containerId>jetty9x</containerId>
+	            		<type>embedded</type>
+	                    <!-- containerId>tomcat8x</containerId>
+	                    <type>installed</type>
+	                    <home>/home/jorge/tomcat8</home-->
+	                </container>
+	            </configuration>
+	        </plugin>
+				
+			<!-- Start the Selenium server -->
+	        <plugin>
+	            <groupId>org.codehaus.mojo</groupId>
+	            <artifactId>selenium-maven-plugin</artifactId>
+	            <executions>
+	                <execution>
+	                    <id>start</id>
+	                    <phase>pre-integration-test</phase>
+	                    <goals>
+	                        <goal>start-server</goal>
+	                    </goals>
+	                    <configuration>
+	                        <background>true</background>
+	                        <logOutput>true</logOutput>
+	                    </configuration>
+	                </execution>
+	                <execution>
+	                    <id>stop</id>
+	                    <phase>post-integration-test</phase>
+	                    <goals>
+	                        <goal>stop-server</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin>
+				
+            <!-- Create war files -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -336,6 +459,9 @@
 					<source>${basedir}/src/test/resources/nosql/mongodb_test.groovy</source>
 				</configuration>
 			</plugin>
+			
 		</plugins>
+		
 	</build>
+	
 </project>
