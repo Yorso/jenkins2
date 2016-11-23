@@ -33,6 +33,9 @@
 		<db.user>user1</db.user>
 		<db.password>user1pass</db.password>
 		<gmaven.version>1.5</gmaven.version>
+		<selenium.maven.version>2.3</selenium.maven.version>
+		<cargo.maven2.version>1.6.1</cargo.maven2.version>
+		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
 		<suiteXmlFile>testng.xml</suiteXmlFile>
@@ -276,12 +279,12 @@
 					</excludes>
 				</configuration-->
 			</plugin>
-			
         
 			<!-- Start Jetty server -->
 	        <plugin>
 	            <groupId>org.codehaus.cargo</groupId>
 	            <artifactId>cargo-maven2-plugin</artifactId>
+	            <version>${cargo.maven2.version}</version>
 	            <executions>
 	                <execution>
 	                    <id>start-container</id>
@@ -322,6 +325,7 @@
 	        <plugin>
 	            <groupId>org.codehaus.mojo</groupId>
 	            <artifactId>selenium-maven-plugin</artifactId>
+	            <version>${selenium.maven.version}</version>
 	            <executions>
 	                <execution>
 	                    <id>start</id>
