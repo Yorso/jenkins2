@@ -34,7 +34,7 @@
 		<db.password>user1pass</db.password>
 		<gmaven.version>1.5</gmaven.version>
 		<selenium.maven.version>2.3</selenium.maven.version>
-		<cargo.maven2.version>1.6.1</cargo.maven2.version>
+		<cargo.maven2.version>1.5.0</cargo.maven2.version>
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
@@ -243,7 +243,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${maven.surefire.version}</version>
 				<executions>
 					<execution>
 						<id>Running integration tests</id>
@@ -257,17 +256,20 @@
 								<exclude>none</exclude>
 							</excludes>
 							<includes>
-								<!-- Making integration test only classes ending in TI in integration package -->
-								<!-- include>**/integration/*IT.java</include -->
-								<include>**/integration/*.java</include>
+								<include>**/integration/*IT.java</include>
 							</includes>
 						</configuration>
 					</execution>
 				</executions>
-				<configuration>
+				<!-- configuration>
 					<parallel>methods</parallel>
 	   				<threadCount>4</threadCount>
+	   				<configuration>
+					<excludes>
+						<exclude>target/surefire-reports/*.*</exclude>
+					</excludes>
 				</configuration>
+				</configuration-->
 				<!-- configuration>
 			    	<suiteXmlFiles>
 			    		<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
@@ -284,7 +286,6 @@
 	        <plugin>
 	            <groupId>org.codehaus.cargo</groupId>
 	            <artifactId>cargo-maven2-plugin</artifactId>
-	            <version>${cargo.maven2.version}</version>
 	            <executions>
 	                <execution>
 	                    <id>start-container</id>

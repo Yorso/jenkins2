@@ -17,7 +17,7 @@ import com.jorge.util.Constants;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 
 //INTEGRATION TESTNG
-public class SeleniumTest {
+public class SeleniumTestIT {
 
 	private WebDriver driver;
 	private StringBuilder url;
@@ -89,7 +89,7 @@ public class SeleniumTest {
 	    //Common for both ways
 		driver.manage().window().maximize();
 		
-		driver.get("http://centos1:8097/jenkins2/hi");;
+		driver.get("http://localhost:8097/jenkins2/hi");;
 		//driver.get(url.toString());
 		
 		Assert.assertTrue(driver.getPageSource().contains("Hi"));
