@@ -85,6 +85,7 @@ public class SeleniumTest {
 	
 	@Test
 	public void doTestIT() {
+		System.out.println("URL FINAL: " + url.toString());
 	    //Common for both ways
 		driver.manage().window().maximize();
 		
