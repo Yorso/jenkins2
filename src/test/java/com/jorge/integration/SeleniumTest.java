@@ -89,7 +89,8 @@ public class SeleniumTest {
 	    //Common for both ways
 		driver.manage().window().maximize();
 		
-		driver.get(url.toString());
+		driver.get("http://centos1:8097/jenkins2/hi");;
+		//driver.get(url.toString());
 		
 		Assert.assertTrue(driver.getPageSource().contains("Hi"));
 		
@@ -99,7 +100,7 @@ public class SeleniumTest {
 	public void closeBrowser() {
 		//Close browser
 		//driver.close();
-		driver.quit();
+		//driver.quit();
 	}
 
 	/*private Selenium selenium; 

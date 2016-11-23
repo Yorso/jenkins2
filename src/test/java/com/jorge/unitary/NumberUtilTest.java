@@ -68,7 +68,6 @@ public class NumberUtilTest {
 	
 	@Test(dataProvider = "values")
 	public void testAdd(int a, int b, int c) {
-		System.out.println("NumberUtilTest");
 		AssertJUnit.assertEquals(NumberUtil.add(a, b), c);
 	}
 

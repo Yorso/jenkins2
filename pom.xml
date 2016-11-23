@@ -257,8 +257,8 @@
 								<exclude>none</exclude>
 							</excludes>
 							<includes>
-								<!-- Executes integration test, only classes ending in IT of integration package  -->
-								<!-- include>**/integration/*IT.java</include-->
+								<!-- Making integration test only classes ending in TI in integration package -->
+								<!-- include>**/integration/*IT.java</include -->
 								<include>**/integration/*.java</include>
 							</includes>
 						</configuration>
