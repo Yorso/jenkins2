@@ -17,7 +17,7 @@ import com.jorge.util.Constants;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 
 //INTEGRATION TESTNG
-public class SeleniumTestIT {
+public class HiTest {
 
 	private WebDriver driver;
 	private StringBuilder url;

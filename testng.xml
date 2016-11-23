@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="methods">
 	<test name="SeleniumTest">
 		<classes>
-			<class name="com.jorge.integration.SeleniumTestIT"/>
+			<class name="com.jorge.integration.HiTest"/>
 		</classes>
 	</test>
 	<!-- test name="FacebookTest">

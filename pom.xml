@@ -256,7 +256,7 @@
 								<exclude>none</exclude>
 							</excludes>
 							<includes>
-								<include>**/integration/*IT.java</include>
+								<include>**/integration/*.java</include>
 							</includes>
 						</configuration>
 					</execution>
