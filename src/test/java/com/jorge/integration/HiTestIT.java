@@ -17,7 +17,7 @@ import com.jorge.util.Constants;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 
 //INTEGRATION TESTNG
-public class HiTest {
+public class HiTestIT {
 
 	private WebDriver driver;
 	private StringBuilder url;
@@ -81,16 +81,15 @@ public class HiTest {
 		//IMPORTANT: Must be a browser installed on Master machine
 		FirefoxDriverManager.getInstance().setup();
 		driver = new FirefoxDriver();
+		
+		driver.manage().window().maximize();
 	}
 	
 	@Test
 	public void doTestIT() {
 		System.out.println("URL FINAL: " + url.toString());
-	    //Common for both ways
-		driver.manage().window().maximize();
 		
-		driver.get("http://localhost:8097/jenkins2/hi");;
-		//driver.get(url.toString());
+		driver.get(url.toString());
 		
 		Assert.assertTrue(driver.getPageSource().contains("Hi"));
 		
@@ -100,7 +99,7 @@ public class HiTest {
 	public void closeBrowser() {
 		//Close browser
 		//driver.close();
-		//driver.quit();
+		driver.quit();
 	}
 
 	/*private Selenium selenium; 
