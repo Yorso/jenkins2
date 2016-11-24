@@ -203,6 +203,12 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<dependency>
+		    <groupId>com.pojosontheweb</groupId>
+		    <artifactId>monte-repack</artifactId>
+		    <version>1.0</version>
+		</dependency>
+		
 	</dependencies>
 	
 	<build>
@@ -251,9 +257,9 @@
 						</goals>
 						<configuration>
 							<skip>false</skip>
-							<excludes>
-								<exclude>none</exclude>
-							</excludes>
+							<!-- excludes>
+								<exclude>**/unity/*.java</exclude>
+							</excludes-->
 							<includes>
 								<include>**/integration/*IT.java</include>
 							</includes>
@@ -274,11 +280,11 @@
 			    		<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 			    	</suiteXmlFiles>
 			    </configuration-->
-				<!-- configuration>
+				<configuration>
 					<excludes>
-						<exclude>**/integration/*IT.java</exclude>
+						<exclude>**/integration/Hi*.java</exclude>
 					</excludes>
-				</configuration-->
+				</configuration>
 			</plugin>
         
 			<!-- Start Jetty server -->

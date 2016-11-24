@@ -12,15 +12,17 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.jorge.TestRecorder;
 import com.jorge.util.Constants;
 
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 
 //INTEGRATION TESTNG
-public class HiTestIT {
+public class HiTest {
 
 	private WebDriver driver;
 	private StringBuilder url;
+	private TestRecorder testRecorder;
 	
 	@BeforeTest
 	public void startSeleniumServer() throws Exception {
@@ -82,6 +84,15 @@ public class HiTestIT {
 		FirefoxDriverManager.getInstance().setup();
 		driver = new FirefoxDriver();
 		
+		//Starting recording test
+		/*testRecorder = new TestRecorder();
+		try {
+			testRecorder.startRecording();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
+		
 		driver.manage().window().maximize();
 	}
 	
@@ -97,8 +108,16 @@ public class HiTestIT {
 	
 	@AfterTest
 	public void closeBrowser() {
+		//Stoping recording test
+		try {
+			//testRecorder.stopRecording();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		//Close browser
-		//driver.close();
+		driver.close();
 		driver.quit();
 	}
 
