@@ -40,6 +40,7 @@ public class HiTestIT {
 			e.printStackTrace();
 		}
 
+		//Getting port and project name from pom.xml properties
 		String port = mavenProps.getProperty(Constants.CARGO_PORT);
 		String projectName = mavenProps.getProperty(Constants.PROJECT_NAME);
 		  
@@ -88,6 +89,9 @@ public class HiTestIT {
 		FirefoxDriverManager.getInstance().setup();
 		driver = new FirefoxDriver();
 		
+		driver.manage().window().maximize();
+		
+		
 		//Starting recording test
 		testRecorder = new TestRecorder();
 		try {
@@ -97,7 +101,6 @@ public class HiTestIT {
 			e1.printStackTrace();
 		}
 		
-		driver.manage().window().maximize();
 	}
 	
 	@Test
