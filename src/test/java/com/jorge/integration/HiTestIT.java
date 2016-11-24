@@ -40,7 +40,7 @@ public class HiTestIT {
 			e.printStackTrace();
 		}
 
-		//Getting port and project name from pom.xml <properties></properties>
+		//Getting port and project name from pom.xml <properties>...</properties>
 		String port = mavenProps.getProperty(Constants.CARGO_PORT);
 		String projectName = mavenProps.getProperty(Constants.PROJECT_NAME);
 		  
