@@ -1,4 +1,4 @@
-package com.jorge;
+package com.jorge.util;
 
 import static org.monte.media.FormatKeys.EncodingKey;
 import static org.monte.media.FormatKeys.FrameRateKey;
