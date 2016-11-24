@@ -13,8 +13,7 @@
 		<spring.version>4.3.0.RELEASE</spring.version>
 		<javax.servlet.version>3.1.0</javax.servlet.version>
 		<jstl.version>1.2</jstl.version>
-		<!-- junit.version>4.10</junit.version -->
-		<junit.version>4.12-beta-1</junit.version>
+		<junit.version>4.12</junit.version>
 		<testng.version>6.8</testng.version>
 		<selenium.server.version>3.0.1</selenium.server.version>
 		<selenium.java.client.driver>1.0.1</selenium.java.client.driver>
