@@ -29,8 +29,6 @@
 		<maven.war.version>2.6</maven.war.version>
 		<sql.maven.version>1.5</sql.maven.version>
 		<cargo.port>8097</cargo.port>
-		<db.user>user1</db.user>
-		<db.password>user1pass</db.password>
 		<gmaven.version>1.5</gmaven.version>
 		<selenium.maven.version>2.3</selenium.maven.version>
 		<cargo.maven2.version>1.6.1</cargo.maven2.version>
@@ -257,9 +255,9 @@
 						</goals>
 						<configuration>
 							<skip>false</skip>
-							<!-- excludes>
-								<exclude>**/unity/*.java</exclude>
-							</excludes-->
+							<excludes>
+								<exclude>**/integration/HiTestIT.java</exclude>
+							</excludes>
 							<includes>
 								<include>**/integration/*IT.java</include>
 							</includes>
@@ -280,11 +278,11 @@
 			    		<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 			    	</suiteXmlFiles>
 			    </configuration-->
-				<configuration>
+				<!-- configuration>
 					<excludes>
 						<exclude>**/integration/Hi*.java</exclude>
 					</excludes>
-				</configuration>
+				</configuration-->
 			</plugin>
         
 			<!-- Start Jetty server -->
@@ -387,8 +385,7 @@
 						continue' in general configuration and 'IF EXISTS' in 'sqlCommand'. They 
 						don't work and give us an error -->
 					<url>jdbc:mysql://localhost:3306?useUnicode=true&amp;characterEncoding=UTF-8</url>
-					<username>${db.user}</username>
-					<password>${db.password}</password>
+					<settingsKey>db.data</settingsKey> <!-- Getting data from settings.xml in .m2 folder -->
 					<autocommit>true</autocommit>
 					<onError>continue</onError>
 				</configuration>

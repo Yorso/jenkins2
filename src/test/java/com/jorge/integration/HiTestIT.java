@@ -18,7 +18,7 @@ import com.jorge.util.TestRecorder;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 
 //INTEGRATION TESTNG
-public class HiTest {
+public class HiTestIT {
 
 	private WebDriver driver;
 	private StringBuilder url;

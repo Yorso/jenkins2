@@ -59,6 +59,8 @@ public class AppConfig{
 		dataSource.setUrl("jdbc:mysql://localhost:3306/test1");
 		dataSource.setUsername("user1");
 		dataSource.setPassword("user1pass");
+		
+		System.setProperty("usus", "user1");
 		return dataSource;
 	}
 	

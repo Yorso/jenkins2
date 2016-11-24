@@ -19,15 +19,11 @@ import org.monte.media.Format;
 import org.monte.media.FormatKeys;
 import org.monte.media.math.Rational;
 import org.monte.screenrecorder.ScreenRecorder;
-import org.springframework.stereotype.Component;
 
-import com.jorge.util.Constants;
-
-@Component
 public class TestRecorder {
 
 	private ScreenRecorder screenRecorder;
-
+	
 	public void startRecording() throws Exception {
 		GraphicsConfiguration gc = GraphicsEnvironment//
 				.getLocalGraphicsEnvironment()//
