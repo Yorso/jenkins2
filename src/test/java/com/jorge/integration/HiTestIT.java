@@ -36,7 +36,6 @@ public class HiTestIT {
 		try {
 			mavenProps.load(in);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -97,7 +96,6 @@ public class HiTestIT {
 		try {
 			testRecorder.startRecording();
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
@@ -152,7 +150,6 @@ public class HiTestIT {
 		try {
 			testRecorder.stopRecording();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
