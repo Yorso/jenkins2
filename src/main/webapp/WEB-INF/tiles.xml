@@ -3,35 +3,10 @@
 <tiles-definitions>
 	
 	<definition name="template" template="/WEB-INF/jsp/templates/template.jsp"/>
-	<definition name="template1" template="/WEB-INF/jsp/templates/template1.jsp" />
-	<definition name="template2" template="/WEB-INF/jsp/templates/template2.jsp" />
 	
-	<!-- 
-		 Shows pages under '/jsp/path_passed_in_answer/' folder. 
-		 Example: 'return "user/list2";' shows list2.jsp which is under user folder ('/WEB-INF/jsp/user/list2.jsp')
-	-->
-	<definition name="*/*" extends="template">
-		<put-attribute name="body" value="/WEB-INF/jsp/{1}/{2}.jsp" />
-	</definition>
-	
-	<!-- Shows main_home.jsp page under '/jsp/' folder using template1.jsp (if you return 'main_home' in controller) -->
-	<definition name="main_*" extends="template1">
-		<put-attribute name="body" value="/WEB-INF/jsp/main_{1}.jsp" /> <!-- You need write name attribute before {1} -->
-	</definition>
-	
-	<!-- Shows secondary_home.jsp or secondary_home2.jsp pages under '/jsp/' folder using template2.jsp (if you return 'secondary_home' or 'secondary_home2' in controller) -->
-	<definition name="secondary_*" extends="template2">
-		<put-attribute name="body" value="/WEB-INF/jsp/secondary_{1}.jsp" /> <!-- You need write name attribute before {1} -->
-	</definition>
-	
-	<!-- I18N example -->
-	<definition name="multilang" template="/WEB-INF/jsp/multilang.jsp" />
-	
-	<!-- Shows pages under '/jsp/' folder using template.jsp. It must be under others definitions with name different to * (wildcard) -->
 	<definition name="*" extends="template">
-		<!-- <put-attribute name="title" value="home.title" />   home.title is the key in /src/main/resources/messages_xx.properties -->
-		<put-attribute name="title" value="{1}.title" /> <!-- Defining page titles only once using a text attribute. {1} = home in this case ==> home.title which is the key in messages_xx.properties -->
-		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp"/>
+	<put-attribute name="title" value="{1}.title" />
+		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
 	</definition>
 	
 </tiles-definitions>

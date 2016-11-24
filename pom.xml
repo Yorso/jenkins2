@@ -32,6 +32,7 @@
 		<gmaven.version>1.5</gmaven.version>
 		<selenium.maven.version>2.3</selenium.maven.version>
 		<cargo.maven2.version>1.6.1</cargo.maven2.version>
+		<tiles.version>3.0.5</tiles.version>
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
@@ -90,6 +91,18 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
+		</dependency>
+		
+		<!-- Tiles Maven Dependencies -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${tiles.version}</version>
 		</dependency>
 
 		<!-- JUnit -->
@@ -256,7 +269,7 @@
 						<configuration>
 							<skip>false</skip>
 							<excludes>
-								<exclude>**/integration/HiTestIT.java</exclude>
+								<exclude>**/integration/FacebookRegistrationTestIT.java</exclude>
 							</excludes>
 							<includes>
 								<include>**/integration/*IT.java</include>

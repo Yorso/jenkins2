@@ -5,8 +5,13 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import org.junit.runners.model.TestClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -46,8 +51,7 @@ public class HiTestIT {
 				.append(port)
 				.append("/")
 				.append(projectName)
-				.append("/")
-				.append(Constants.PAGE);
+				.append("/");
 		
 		
 		
@@ -85,24 +89,57 @@ public class HiTestIT {
 		driver = new FirefoxDriver();
 		
 		//Starting recording test
-		/*testRecorder = new TestRecorder();
+		testRecorder = new TestRecorder();
 		try {
 			testRecorder.startRecording();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}*/
+		}
 		
 		driver.manage().window().maximize();
 	}
 	
 	@Test
 	public void doTestIT() {
-		System.out.println("URL FINAL: " + url.toString());
-		
+		System.out.println("URL HI: " + url.append(Constants.PAGE_HI).toString());
 		driver.get(url.toString());
-		
 		Assert.assertTrue(driver.getPageSource().contains("Hi"));
+		
+		System.out.println("URL FORM: " + url.append("/../").append(Constants.PAGE_FORM).toString());
+		driver.navigate().to(url.toString());
+		driver.findElement(By.xpath(".//*[@id='firstName']")).sendKeys("Peter");
+		
+		//Selecting value in select
+		driver.findElement(By.id("ageComb")).sendKeys("63");
+		//driver.findElement(By.id("ageComb")).sendKeys(Keys.ARROW_DOWN); //Move one position down on select combo. 
+																		  //For example, if you send key "63", ARROW_DOWN put select in "62"
+		driver.findElement(By.id("ageComb")).sendKeys(Keys.ENTER);
+		
+		//It doesn't work in our example
+		//Select selAge = new Select(driver.findElement(By.xpath(".//*[@id='ageComb']")));
+		//selAge.selectByVisibleText(); 
+		//selAge.selectByValue("32");
+		//selAge.selectByIndex(27);
+
+		//Clicking submit button
+	    driver.findElement(By.xpath(".//*[@id='submit']")).click();
+	    
+	    //Create object of WebDriverWait class
+	    WebDriverWait wait=new WebDriverWait(driver,20);
+	    //Waiting for response sentence
+	    WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='m']")));
+	    
+	    //If element found then we will use. In this example we just called isDisplayed method
+ 		boolean status = element.isDisplayed();
+  
+ 		if (status) {
+ 			//If user was recorded in DB, sentences displays "correctly" word, else there was n error recording user in DB
+ 			Assert.assertTrue(driver.getPageSource().contains("correctly"));
+ 		} else {
+ 			//At this point, it means there was an error with the return of sentence
+ 			Assert.assertTrue(false);
+ 		}
 		
 	}
 	
@@ -110,7 +147,7 @@ public class HiTestIT {
 	public void closeBrowser() {
 		//Stoping recording test
 		try {
-			//testRecorder.stopRecording();
+			testRecorder.stopRecording();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

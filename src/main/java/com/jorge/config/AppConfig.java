@@ -7,9 +7,11 @@ package com.jorge.config;
 
 import javax.sql.DataSource;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -18,6 +20,8 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration // This declares it as a Spring configuration class
 @EnableWebMvc // This enables Spring's ability to receive and process web requests. Necessary for interceptors too.
@@ -35,18 +39,37 @@ import org.springframework.web.servlet.view.JstlView;
 
 public class AppConfig{
 
-	/*
-	 * If we aren't going to use Tiles, uncomment jspViewResolver() method and
-	 * comment tilesConfigurer() and tilesViewResolver() methods
-	 *
+	/**
+	 * TILES
 	 */
-	 @Bean 
-	 public ViewResolver jspViewResolver(){ 
-		 InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		 resolver.setViewClass(JstlView.class);
-		 resolver.setPrefix("/WEB-INF/jsp/"); // These folders must be created on /src/main/webapp/ 
-		 resolver.setSuffix(".jsp"); return resolver; 
-	 }
+	// Declare Tiles configuration file
+	@Bean
+	public TilesConfigurer tilesConfigurer() {
+		TilesConfigurer tilesConfigurer = new TilesConfigurer();
+		final String[] definitions = { "/WEB-INF/tiles.xml" };
+		tilesConfigurer.setDefinitions(definitions);
+		return tilesConfigurer;
+	}
+
+	// Declare Tiles as a view resolver
+	@Bean
+	public ViewResolver tilesViewResolver() {
+		TilesViewResolver resolver = new TilesViewResolver();
+		return resolver;
+	}
+	
+	/**
+	 * PROPERTIES
+	 */
+	@Bean
+	public MessageSource messageSource() {
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		messageSource.setBasename("classpath:/messages");
+		//messageSource.setBasename("/i18n/messages"); // How to set another path to store properties files
+		messageSource.setDefaultEncoding("UTF-8");
+		messageSource.setUseCodeAsDefaultMessage(true);
+		return messageSource;
+	}
 	
 	/***************
 	 *  DATABASES  *
@@ -59,8 +82,6 @@ public class AppConfig{
 		dataSource.setUrl("jdbc:mysql://localhost:3306/test1");
 		dataSource.setUsername("user1");
 		dataSource.setPassword("user1pass");
-		
-		System.setProperty("usus", "user1");
 		return dataSource;
 	}
 	
