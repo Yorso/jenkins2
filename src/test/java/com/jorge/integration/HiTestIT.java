@@ -151,11 +151,13 @@ public class HiTestIT {
 			testRecorder.stopRecording();
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally{
+			//Closing browser
+			if (driver != null) {
+	            driver.close();
+	            driver.quit();
+			}
 		}
-		
-		//Close browser
-		driver.close();
-		driver.quit();
 	}
 
 	/*private Selenium selenium; 

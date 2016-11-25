@@ -10,7 +10,7 @@ public final class Constants {
 	public static final String CARGO_PORT = "cargo.port";
 	public static final String PROJECT_NAME = "name";
 	public static final String VIDEO_FOLDER = "videos";
-	public static final String MESSAGE_OK = "<p id='m'>User added correctly</p>";
-	public static final String MESSAGE_KO = "<p id='m'>Error adding user to DB</p>";
+	public static final String MESSAGE_OK = "<p id='m' style='color:green;'>User added correctly</p>";
+	public static final String MESSAGE_KO = "<p id='m' style='color:red;'>Error adding user to DB</p>";
 
 }

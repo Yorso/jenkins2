@@ -30,7 +30,6 @@ public class FacebookRegistrationTestIT {
 			testRecorder.startRecording();
 			
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
@@ -75,7 +74,6 @@ public class FacebookRegistrationTestIT {
 		try {
 			testRecorder.stopRecording();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally{
 			if (driver != null) {
