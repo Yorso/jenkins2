@@ -33,6 +33,7 @@
 		<selenium.maven.version>2.3</selenium.maven.version>
 		<cargo.maven2.version>1.6.1</cargo.maven2.version>
 		<tiles.version>3.0.5</tiles.version>
+		<monte.version>1.0</monte.version>
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
@@ -193,14 +194,7 @@
 		</dependency>
 
 		<!-- Groovy -->
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-ant</artifactId>
-			<version>${groovy.version}</version>
-			<!-- scope>compile</scope -->
-			<scope>test</scope>
-		</dependency>
-		<dependency>
+		<!-- dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-test</artifactId>
 			<version>${groovy.version}</version>
@@ -209,15 +203,24 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy</artifactId>
-			<version>${groovy.version}</version>
+			<version>${groovy.version}</version-->
 			<!-- scope>compile</scope -->
-			<scope>test</scope>
-		</dependency>
+			<!-- scope>test</scope>
+		</dependency-->
+		<!-- dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-ant</artifactId>
+			<version>${groovy.version}</version-->
+			<!-- scope>compile</scope -->
+			<!-- scope>test</scope>
+		</dependency-->
 		
+		<!-- Monte Screen Recorder -->
 		<dependency>
 		    <groupId>com.pojosontheweb</groupId>
 		    <artifactId>monte-repack</artifactId>
-		    <version>1.0</version>
+		    <version>${monte.version}</version>
+		    <scope>test</scope>
 		</dependency>
 		
 	</dependencies>
@@ -298,7 +301,7 @@
 				</configuration-->
 			</plugin>
         
-			<!-- Start Jetty server -->
+			<!-- Starting and stopping Jetty server -->
 	        <plugin>
 	            <groupId>org.codehaus.cargo</groupId>
 	            <artifactId>cargo-maven2-plugin</artifactId>
@@ -339,8 +342,8 @@
 	            </configuration>
 	        </plugin>
 				
-			<!-- Starting Selenium server -->
-	        <plugin>
+			<!-- Starting and stopping Selenium server -->
+	        <!-- plugin>
 	            <groupId>org.codehaus.mojo</groupId>
 	            <artifactId>selenium-maven-plugin</artifactId>
 	            <version>${selenium.maven.version}</version>
@@ -364,7 +367,7 @@
 	                    </goals>
 	                </execution>
 	            </executions>
-	        </plugin>
+	        </plugin-->
 				
             <!-- Creating war files -->
 			<plugin>
