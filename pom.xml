@@ -405,9 +405,12 @@
 						continue' in general configuration and 'IF EXISTS' in 'sqlCommand'. They 
 						don't work and give us an error -->
 					<url>jdbc:mysql://localhost:3306?useUnicode=true&amp;characterEncoding=UTF-8</url>
-					<!-- Getting encrypted database connection data from settings.xml in .m2 folder -->
-					<settingsKey>db.data</settingsKey> 
-					<!-- We needn't <username> and <password> any more -->
+					<!-- 
+						Getting encrypted database connection data from settings.xml in .m2 folder,
+						using this: https://developer.jboss.org/wiki/Mavensettingsxmlmaskingpassword?_sscc=t
+						So we needn't <username> and <password> any more
+					-->
+					<settingsKey>db.data</settingsKey>
 					<!-- username>${db.user}</username>
           			<password>${db.password}</password -->
 					<autocommit>true</autocommit>
