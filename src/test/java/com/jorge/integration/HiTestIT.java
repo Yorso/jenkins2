@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -20,7 +20,7 @@ import org.testng.annotations.Test;
 import com.jorge.util.Constants;
 import com.jorge.util.TestRecorder;
 
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 //INTEGRATION TESTNG
 public class HiTestIT {
@@ -85,8 +85,10 @@ public class HiTestIT {
 		*/
 		
 		//IMPORTANT: Must be a browser installed on Master machine
-		FirefoxDriverManager.getInstance().setup();
-		driver = new FirefoxDriver();
+		//FirefoxDriverManager.getInstance().setup();
+		//driver = new FirefoxDriver();
+		ChromeDriverManager.getInstance().setup();
+		driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
 		
@@ -135,7 +137,7 @@ public class HiTestIT {
  		boolean status = element.isDisplayed();
   
  		if (status) {
- 			//If user was recorded in DB, sentences displays "correctly" word, else there was n error recording user in DB
+ 			//If user was recorded in DB, response sentence displays "correctly" word, else there was an error recording user in DB
  			Assert.assertTrue(driver.getPageSource().contains("correctly"));
  		} else {
  			//At this point, it means there was an error with the return of sentence
@@ -146,18 +148,18 @@ public class HiTestIT {
 	
 	@AfterTest
 	public void closeBrowser() {
+		//Closing browser
+		if (driver != null) {
+            driver.close();
+            driver.quit();
+		}
+		
 		//Stoping recording test
 		try {
 			testRecorder.stopRecording();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally{
-			//Closing browser
-			if (driver != null) {
-	            driver.close();
-	            driver.quit();
-			}
-		}
+		} 
 	}
 
 	/*private Selenium selenium; 
